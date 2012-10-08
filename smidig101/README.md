@@ -1,4 +1,6 @@
-Presentations
+Smidig 101
 ==============
 
-Repository for presentations ive held
+Presentation about agile methods.
+
+*Presentation in norwegian*
