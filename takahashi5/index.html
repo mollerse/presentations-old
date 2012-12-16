@@ -37,7 +37,7 @@ div {
   left:0;
 }
 </style><script type='text/javascript'>
-window.onload = function() {
+  function init() {
     var s = document.getElementsByTagName('div'), cur = 0;
     if (!s) return;
     function go(n) {
@@ -83,6 +83,7 @@ window.onload = function() {
 
     go(cur);
 };
+window.onload = init;
 </script></head><body>
 <div>Takahashi</div>
 <div>på 5 min</div>
