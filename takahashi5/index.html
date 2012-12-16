@@ -1,0 +1,135 @@
+<!DOCTYPE html><html><head><title></title><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" /><style type='text/css'>
+body {
+  font-family: 'Helvetica';
+  letter-spacing:-5px;
+  background:#000;
+  background-size:100%;
+  color:#fff;
+  margin:0;
+  padding:0;
+  font-weight:bold;
+}
+
+h1, h2, h3, p {
+  margin:0;
+}
+
+em, a {
+  font-style:normal;
+  color:#8dbd0c;
+}
+
+a {
+  background: #34d0e7;
+  color:#000;
+  text-decoration:none;
+}
+
+img {
+  width:100%;
+}
+
+div {
+  cursor:pointer;
+  cursor:hand;
+  position:absolute;
+  top:0;
+  left:0;
+}
+</style><script type='text/javascript'>
+window.onload = function() {
+    var s = document.getElementsByTagName('div'), cur = 0;
+    if (!s) return;
+    function go(n) {
+        cur = n;
+        var i = 1e3, e = s[n];
+        for (var k = 0; k < s.length; k++) s[k].style.display = 'none';
+        e.style.display = 'inline';
+        e.style.fontSize = i + 'px';
+        if (e.firstChild.nodeName === 'IMG') {
+            document.body.style.backgroundImage = 'url(' + e.firstChild.src + ')';
+            e.firstChild.style.display = 'none';
+        } else {
+            document.body.style.backgroundImage = '';
+            document.body.style.backgroundColor = e.style.backgroundColor;
+        }
+        while (
+            e.offsetWidth > window.innerWidth ||
+            e.offsetHeight > window.innerHeight) {
+            e.style.fontSize = (i -= 10) + 'px';
+            if (i < 0) break;
+        }
+        e.style.marginTop = ((window.innerHeight - e.offsetHeight) / 2) + 'px';
+        if (window.location.hash !== n) window.location.hash = n;
+        document.title = e.textContent || e.innerText;
+    }
+    document.onclick = function() {
+        go(++cur % (s.length));
+    };
+    document.onkeydown = function(e) {
+        (e.which === 39) && go(Math.min(s.length - 1, ++cur));
+        (e.which === 37) && go(Math.max(0, --cur));
+    };
+    function parse_hash() {
+        return Math.max(Math.min(
+            s.length - 1,
+            parseInt(window.location.hash.substring(1), 10)), 0);
+    }
+    if (window.location.hash) cur = parse_hash() || cur;
+    window.onhashchange = function() {
+        var c = parse_hash();
+        if (c !== cur) go(c);
+    };
+
+    go(cur);
+};
+</script></head><body>
+<div>Takahashi</div>
+<div>på 5 min</div>
+<div>WTF?</div>
+<div>Presentasjonsmetode</div>
+<div>Masayoshi Takahashi</div>
+<div>Programmerer</div>
+<div>Fra Japan</div>
+<div>Bare tekst</div>
+<div>Kjennetegn</div>
+<div>Ingen effekter</div>
+<div>Ingen grafer</div>
+<div>Ingen bilder</div>
+<div>Ingen punktlister</div>
+<div>Ingen setninger</div>
+<div>...</div>
+<div>Men</div>
+<div>Bare tekst</div>
+<div>STOR</div>
+<div>TEKST</div>
+<div>Mange slides</div>
+<div>Høy frekvens</div>
+<div>Få ord</div>
+<div>Korte ord</div>
+<div>Enkle ord</div>
+<div>WTF?</div>
+<div>Kraftig</div>
+<div>Effektivt</div>
+<div>(hvis brukt rett)</div>
+<div>Kommer ikke i veien</div>
+<div>Enklere å huske</div>
+<div>Enkelt</div>
+<div>Ryddig</div>
+<div>Ingen powerpoint</div>
+<div>Ingen keynote</div>
+<div>Takahashi all the things?</div>
+<div>Nope.</div>
+<div>Men</div>
+<div>Bruksområder</div>
+<div>Enkle</div>
+<div>Og</div>
+<div>Kjappe</div>
+<div>Presentasjoner</div>
+<div>(Litt som dette)</div>
+<div></div>
+<div>Laga med BIG</div>
+<div>&lt;div&gt;'s</div>
+<div>github/tmcw/big</div>
+<div>Takk for meg</div>
+
