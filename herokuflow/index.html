@@ -41,7 +41,7 @@ Mars 2013
 
 # Bakgrunn - Prosjekt
 
-* Vi gikk live 4. Februar i &aring;
+* Vi gikk live 4. Februar i &aring;r
 * Litt over 9 mnd, 2 til 6 utviklere
 * Kj&oslash;rer p&aring; Heroku
 * "Drifter seg selv"
@@ -86,9 +86,8 @@ Mars 2013
 # Github-flow - Hva f&aring;r vi?
 
 * En master det alltid er trygt &aring; deploye fra
-* En master som det alltid er trygt &aring; pulle fra
 * Det blir veldig enkelt &aring; starte p&aring; nye features
-* Det blir enklere &aring; se hvilke endringer en branch innf&oslash;rer
+* Det blir enklere &aring; se hvilke endringer en feature innf&oslash;rer
 
 ---
 
@@ -100,6 +99,7 @@ Mars 2013
 # Heroku - Bakgrunn
 
 * PaaS
+* Extensions
 
 ---
 
@@ -115,38 +115,64 @@ Mars 2013
 
 ---
 
-# Samspill - Fordel 1
+# Samspill - Situasjonen
 
-## Ny feature
-* Er i prod
-* Men vi har fortsatt features igjen
-* Som også skal leveres
-
--> Arbeid i branch, pull til master og deploy
-
----
-
-# Samspill - Fordel 2
-
-## Feedback på WIP
+## Feedback p&aring; WIP
 * Ekstern kunde
-* Features i branches
-
-
--> Spinn opp en 1-Dyno-App på Heroku som deployer (automatisk) fra aktuell feature-branch
+* Features lever i branches
 
 ---
 
-# Samspill - Fordel 3
+# Samspill - L&oslash;sningen
 
-## Automatisering
+* Spinn opp en 1-Dyno-App p&aring; Heroku
+* Deploy fra feature-branch
+* F&aring; feedback p&aring; WIP
+
+---
+
+# Samspill - Videre
+
+* Kj&oslash;rer code-review p&aring; feature
+* Pull inn i master
+* Deployer til prod-like test-app p&aring; heroku
+* Verifikasjon
+* Prod
+
+---
+
+.middle.center
+# (Bonus-level) Automatisering!
+
+---
+
+# Automatisering
+
+* Heroku har et godt CLI
 * git
-* (Jenkins)
-* Heroku
+* Byggeserver med CLI
 
+---
 
--> CLI gir deg muligheten til å automatisere prosessen med å starte på en ny feature
+# Automatisering
 
+* Sette opp en ny branch
+* Starte heroku-app
+* Konfigurere milj&oslash;et p&aring; heroku
+* Alt g&aring;r via kommandolinja -> Script it!
+
+---
+
+#Automatisering
+
+* Sette opp automatisk bygging p&aring; push
+* Sette opp automatisk deploy til heroku
+* Byggeserver med CLI? Script it!
+
+---
+
+.middle.center
+# Takk for meg!
 
 
 </textarea>
