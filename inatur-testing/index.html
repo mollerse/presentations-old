@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="http://cloud.github.com/downloads/gnab/remark/remark-0.3.6.min.js" type="text/javascript"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+  <script src="http://cloud.github.com/downloads/kjbekkelund/remark-bekk/bekk-0.0.4.js" type="text/javascript"></script>
+  <link href="http://cloud.github.com/downloads/kjbekkelund/remark-bekk/bekk-0.0.4.css" type="text/css" rel="stylesheet">
+  <style type="text/css">
+    /* Slideshow styles */
+  </style>
+</head>
+<body>
+<textarea id="source">
+
+.front-page
+# Testing av JavaScript
+
+## Hvordan vi tester JavaScript p&aring; Inatur.no
+
+Presentasjon for faggruppe, 19. april 2013
+
+Stian Veum M&oslash;llersen
+
+April 2013
+
+---
+
+# Agenda
+
+* Statistikk
+* Oppsett
+* Fordeler
+* Ulemper
+
+---
+
+.middle.center
+# Statistikk
+
+---
+
+# Statistikk 
+
+.cols.three
+
+<div class="col">
+
+	# Javascript kode
+
+	* Linjer: 21460
+	* Filer: 383
+	* ~56 linjer per fil
+
+</div>
+<div class="col">
+
+	# Javascript tester
+
+	* Linjer: 5772
+	* Filer: 60
+	* ~96.2 linjer per fil
+
+</div>
+<div class="col">
+
+	# Java kode
+
+	* Linjer: 38291
+	* Filer: 519
+	* ~73.7 linjer per fil
+
+</div>
+
+---
+
+.middle.center
+## Det er en del JavaScript
+
+---
+
+.middle.center
+## Selv om noe av det kommer fra Backbone &amp; Co.
+
+---
+.middle.center
+
+# Oppsett
+
+---
+
+# Oppsett - Kode
+
+* Backbone.js
+* Require.js
+* Hogan for Mustache-templates
+
+---
+
+# Oppsett - Tester
+
+* Jasmine
+* HTMLUnit
+* Require.js
+* Sinon/FakeResponse .footnote[.red.bold[\[1\]]]
+
+.bottom[
+[1][http://open.bekk.no/integration-testing-backbone-js/](http://open.bekk.no/integration-testing-backbone-js/)
+]
+
+---
+
+# Oppsett - Dev
+
+* Jasmine runner i browser
+* HTMLUnit runner for Maven
+* CI med Jenkins
+
+---
+.middle.center
+
+# Fordeler
+
+---
+
+# Fordeler
+
+* Backbone er naturlig testbart
+* Testene blir en del av byggeprosessen
+* HTMLUnit og jasmine-jquery gir oss muligheten til å teste DOM-manipulasjon
+
+---
+
+# Ulemper
+
+* HTMLUnit hadde langt timeout
+* Fixtures som kom ut av sync
+
+---
+
+.middle.center
+# Takk for meg!
+
+
+</textarea>
+<div id="slideshow"><div>
+</body>
+</html>
