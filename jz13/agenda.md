@@ -1,0 +1,16 @@
+# Agenda
+- Intro
+    - Tittel
+    - Navn / @
+- Code Review:
+    - Antar du gjør dem, hvis ikke så er jeg ikke her for å overbevise deg hvorfor
+    - Du vil vite hvor du kan få tak i endringene
+    - Du vil vite hva som er endret
+    - Du vil vite om det er noen konflikter med eksisterende kode
+- Pull Requests
+    - githubs PR
+    - git request-pull (Finn ut siden når)
+- Sammenligne features
+    - Path/URL
+    - Antall commits og meldinger
+    - Endrings-statistikk

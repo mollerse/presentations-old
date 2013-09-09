@@ -17,7 +17,8 @@
             <div class="slides">
 
                 <section>
-                    <h2>Gjør code-review til en lek med pull-requests</h2>
+                    <h2>Gjør code-review til en lek</h2>
+                    <h2> med pull-requests!</h2>
                     <p></p>
                 </section>
 
@@ -32,21 +33,97 @@
                 </section>
 
                 <section>
+                    <section>
+                        <h2>Hva vil du vite?</h2>
+                    </section>
+
+                    <section>
+                        <h2>Tre ting</h2>
+                        <ol>
+                            <li>Hvor finnes endringene?</li>
+                            <li>Hva er endret?</li>
+                            <li>Vil det bli noen konflikter?</li>
+                        </ol>
+                    </section>
+                </section>
+
+                <section>
                     <h2>Pull Requests</h2>
                 </section>
 
                 <section>
-                    <img src="assets/pr.png" alt="">
+                    <img src="assets/pr2.png" alt="">
                 </section>
 
                 <section>
-                    <h2><code>git request-pull</code></h2>
+                    <section>
+                        <h2><code>git request-pull</code></h2>
+                    </section>
+                    <section>
+                        <img src="assets/request-pull2.png" alt="">
+                    </section>
                 </section>
 
                 <section>
-                    <img src="assets/manpage.png" alt="">
+                    <section>
+                        <h2>Hvor finnes endringene?</h2>
+                    </section>
+                    <section>
+                        <h2>Github</h2>
+                        <img src="" alt="Bilde av githubs url">
+                    </section>
+                    <section>
+                        <h2><code>git</code></h2>
+                        <img src="" alt="Bilde av param til git-kommando og output">
+                    </section>
                 </section>
 
+                <section>
+                    <section>
+                        <h2>Hva er endret?</h2>
+                    </section>
+                    <section>
+                        <h2>Commits</h2>
+                    </section>
+                    <section>
+                        <h2>Github</h2>
+                        <img src="" alt="Bilde av githubs commit-overview">
+                    </section>
+                    <section>
+                        <h2><code>git</code></h2>
+                        <img src="" alt="Bilde av git request-pull output">
+                    </section>
+                    <section>
+                        <h2>Endringer</h2>
+                    </section>
+                    <section>
+                        <h2>Github</h2>
+                        <img src="" alt="Bilde av githubs diff-view">
+                    </section>
+                    <section>
+                        <h2><code>git</code></h2>
+                        <img src="" alt="Bilde av patch-output">
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Vil det bli noen konflikter?</h2>
+                    </section>
+                    <section>
+                        <h2>Github</h2>
+                        <img src="" alt="Bile av githubs merge-summary">
+                    </section>
+                    <section>
+                        <h2><code>git</code></h2>
+                        <p>Her må vi trikse litt</p>
+                    </section>
+                    <section>
+                        <h2><code>git format-patch</code></h2>
+                        <h3>og</h3>
+                        <h2><code>git apply</code></h2>
+                    </section>
+                </section>
 
             </div>
 
@@ -57,7 +134,16 @@
 
         <script>
 
-            Reveal.initialize();
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; }},
+                    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
 
         </script>
 
