@@ -27,15 +27,10 @@
                 </section>
 
                 <section>
-                    <h2>Code Review</h2>
-                    <p></p>
-                </section>
-
-                <section>
                     <section>
-                        <h2>Hva vil du vite?</h2>
+                        <h2>Code Review</h2>
+                        <h3>Hva vil du vite?</h3>
                     </section>
-
                     <section>
                         <h2>Tre ting</h2>
                         <ol>
@@ -47,19 +42,20 @@
                 </section>
 
                 <section>
-                    <h2>Pull Requests</h2>
-                </section>
-
-                <section>
-                    <img src="assets/pr2.png" alt="">
-                </section>
-
-                <section>
+                    <section>
+                        <h2>Pull Requests</h2>
+                    </section>
+                    <section>
+                        <img src="assets/pr1.png" alt="">
+                    </section>
                     <section>
                         <h2><code>git request-pull</code></h2>
                     </section>
                     <section>
-                        <img src="assets/request-pull2.png" alt="">
+                        <img src="assets/manpage.png" alt="">
+                    </section>
+                    <section>
+                        <img src="assets/pr2.png" alt="">
                     </section>
                 </section>
 
@@ -69,11 +65,11 @@
                     </section>
                     <section>
                         <h2>Github</h2>
-                        <img src="" alt="Bilde av githubs url">
+                        <h3>user/repo</h3>
                     </section>
                     <section>
                         <h2><code>git</code></h2>
-                        <img src="" alt="Bilde av param til git-kommando og output">
+                        <img src="assets/pr2-url.png" alt="Bilde av param til git-kommando og output">
                     </section>
                 </section>
 
@@ -86,22 +82,22 @@
                     </section>
                     <section>
                         <h2>Github</h2>
-                        <img src="" alt="Bilde av githubs commit-overview">
+                        <img src="assets/pr1-commits.png" alt="Bilde av githubs commit-overview">
                     </section>
                     <section>
                         <h2><code>git</code></h2>
-                        <img src="" alt="Bilde av git request-pull output">
+                        <img src="assets/pr2-commits.png" alt="Bilde av git request-pull output">
                     </section>
                     <section>
                         <h2>Endringer</h2>
                     </section>
                     <section>
                         <h2>Github</h2>
-                        <img src="" alt="Bilde av githubs diff-view">
+                        <img src="assets/pr1-diff.png" alt="Bilde av githubs diff-view">
                     </section>
                     <section>
                         <h2><code>git</code></h2>
-                        <img src="" alt="Bilde av patch-output">
+                        <img src="assets/pr2-diff.png" alt="Bilde av patch-output">
                     </section>
                 </section>
 
@@ -111,55 +107,67 @@
                     </section>
                     <section>
                         <h2>Github</h2>
-                        <img src="" alt="Bile av githubs merge-summary">
+                        <img src="assets/pr1-merge.png" alt="Bile av githubs merge-summary">
                     </section>
                     <section>
                         <h2><code>git</code></h2>
-                        <p>Her må vi trikse litt</p>
+                        <h3><code>git request-pull -p > pr.patch</code></h3>
+                        <h3><code>git checkout master</code></h3>
+                        <h3><code>git apply --check pr.patch</code></h3>
                     </section>
                     <section>
-                        <h2><code>git format-patch</code></h2>
-                        <h3>og</h3>
-                        <h2><code>git apply</code></h2>
+                        <h2>Tips</h2>
+                        <h3>Legg til .patch på slutten av urlen til en pull-request på github</h3>
                     </section>
                     <section>
                         <h2>Testresultater</h2>
                     </section>
                     <section>
                         <h2>Github</h2>
-                        <img src="" alt="Bilde av CI-integrasjon">
+                        <img src="assets/ci.png" alt="Bilde av CI-integrasjon">
                     </section>
                     <section>
                         <h2><code>git</code></h2>
-                        <h3><code>git merge</code></h3>
+                        <h3><code>git checkout -b temp</code></h3>
+                        <h3><code>git merge pr-example</code></h3>
+                        <h3><code>run tests</code></h3>
                     </section>
                 </section>
 
                 <section>
-                    <h2>Mindre støy</h2>
-                    <h3>Du får se akkurat det som er endret</h3>
+                    <h2>Github bonus</h2>
+                    <h3>Diskusjoner</h3>
                 </section>
 
                 <section>
-                    <h2>Mye informasjon</h2>
-                    <h3>Meta-informasjon om endringene</h3>
-                </section>
-
-                <section>
-                    <h2>Fordeler</h2>
-                    <ul>
-                        <li>Delvis workflow-uavhengig</li>
-                        <li>Må ikke bruke Github</li>
-                        <li>Kan automatiseres</li>
-                    </ul>
+                    <section>
+                        <h2>Oppsummering</h2>
+                    </section>
+                    <section>
+                        <h2>Mindre støy</h2>
+                        <h3>Du får se akkurat det som er endret</h3>
+                    </section>
+                    <section>
+                        <h2>Mye informasjon</h2>
+                        <h3>Meta-informasjon om endringene</h3>
+                    </section>
                 </section>
 
                 <section>
                     <h2>Begrensninger</h2>
                     <ul>
                         <li>Må bruke branches</li>
-                        <li>Store endringer kan bli uoversiktlige</li>
+                        <li>Branches må være tilgjengelige</li>
                         <li>Langt-levende branches</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Fordeler</h2>
+                    <ul>
+                        <li>(Delvis) workflow-uavhengig</li>
+                        <li>Må ikke bruke Github</li>
+                        <li>Kan automatiseres</li>
                     </ul>
                 </section>
 
