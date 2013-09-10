@@ -9,8 +9,25 @@
     - Du vil vite om det er noen konflikter med eksisterende kode
 - Pull Requests
     - githubs PR
-    - git request-pull (Finn ut siden når)
-- Sammenligne features
+    - git request-pull
+- PR features
     - Path/URL
-    - Antall commits og meldinger
-    - Endrings-statistikk
+    - Commitoversikt
+    - Endringsoversikt
+    - Merge-status
+    - CI integration
+- Setter du dette sammen så vil du:
+    - Enkel oversikt over hvilke endringer som er gjort slik at du slipper å lete
+    - Få kjapp tilgang på mye informasjon
+- Fordeler
+    - Passer med mange forskjellige workflows
+    - Må ikke bruke Github
+    - Automatiserbart
+- Begrensninger
+    - Må bruke branches
+    - Fungerer best med mindre endringer
+    - Fungerer best med kortlevde branches
+- Videre lesning
+    -   Github-flow
+- Takk for meg
+
