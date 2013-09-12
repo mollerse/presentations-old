@@ -19,20 +19,24 @@
                 <section>
                     <h2>Gjør code-review til en lek</h2>
                     <h2> med pull-requests!</h2>
-                    <p>Stian Veum Møllersen</p>
                     <p>JavaZone 2013</p>
+                    <p>Stian Veum Møllersen / <a href="http://twitter.com/mollerse">@mollerse</a></p>
+                    <p><a href="http://open.bekk.no">open.bekk.no</a></p>
                 </section>
 
                 <section>
                     <section>
                         <h2>Code Review</h2>
-                        <h3>Hva vil du vite?</h3>
+                    </section>
+                    <section>
+                        <h2>Hva vil du vite?</h2>
+                        <h3>Om det du skal reviewe</h3>
                     </section>
                     <section>
                         <h2>Tre ting</h2>
                         <ol>
                             <li>Hvor finnes endringene?</li>
-                            <li>Hva er endret?</li>
+                            <li>Hva er endret og hvorfor?</li>
                             <li>Vil det bli noen konflikter?</li>
                         </ol>
                     </section>
@@ -41,6 +45,7 @@
                 <section>
                     <section>
                         <h2>Pull Requests</h2>
+                        <h3>En samling endringer</h3>
                     </section>
                     <section>
                         <img src="assets/pr1.png" alt="">
@@ -72,7 +77,7 @@
 
                 <section>
                     <section>
-                        <h2>Hva er endret?</h2>
+                        <h2>Hva er endret og hvorfor?</h2>
                     </section>
                     <section>
                         <h2>Commits</h2>
@@ -114,7 +119,13 @@
                     </section>
                     <section>
                         <h2>Tips</h2>
-                        <h3>Legg til .patch på slutten av urlen til en pull-request på github</h3>
+                        <p>github.com/path/to/pull-request.[patch|diff]</p>
+                    </section>
+                    <section>
+                        <h2>NB!</h2>
+                        <p><code>git format-patch</code></p>
+                        <p>hvis du tenker å benytte</p>
+                        <p><code>git am</code></p>
                     </section>
                     <section>
                         <h2>Testresultater</h2>
@@ -141,12 +152,12 @@
                         <h2>Oppsummering</h2>
                     </section>
                     <section>
-                        <h2>Mindre støy</h2>
-                        <h3>Du får se akkurat det som er endret</h3>
+                        <h2>Mer informasjon</h2>
+                        <h3>Meta-informasjon om endringene</h3>
                     </section>
                     <section>
-                        <h2>Mye informasjon</h2>
-                        <h3>Meta-informasjon om endringene</h3>
+                        <h2>Mindre støy</h2>
+                        <h3>Du får se akkurat det som er endret</h3>
                     </section>
                 </section>
 
@@ -154,8 +165,8 @@
                     <h2>Begrensninger</h2>
                     <ul>
                         <li>Må bruke branches</li>
-                        <li>Branches må være tilgjengelige</li>
                         <li>Langt-levende branches</li>
+                        <li>Store endringer</li>
                     </ul>
                 </section>
 
@@ -163,9 +174,13 @@
                     <h2>Fordeler</h2>
                     <ul>
                         <li>(Delvis) workflow-uavhengig</li>
-                        <li>Må ikke bruke Github</li>
-                        <li>Kan automatiseres</li>
+                        <li>Oversiktlig</li>
+                        <li>Sporbart</li>
                     </ul>
+                </section>
+                <section>
+                    <h2>Kan gjennomføres uten Github</h2>
+                    <h3>og det kan automatiseres</h3>
                 </section>
 
                 <section>
