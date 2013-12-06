@@ -1,0 +1,6 @@
+{
+  "name": "RapidPrototype",
+  "dependencies": {
+    "jquery": "~2.0.3"
+  }
+}

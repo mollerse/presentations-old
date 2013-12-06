@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "ecstatic": "~0.4.12",
+    "lodash.map": "~2.4.1",
+    "lodash.foreach": "~2.4.1"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-watch": "~0.5.3",
+    "browserify": "~2.36.1",
+    "grunt-browserify": "~1.2.11",
+    "grunt-contrib-less": "~0.8.2",
+    "grunt-notify": "~0.2.16",
+    "grunt-contrib-connect": "~0.5.0",
+    "brfs": "0.0.8",
+    "grunt-contrib-jshint": "~0.7.2"
+  }
+}

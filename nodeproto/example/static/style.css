@@ -1,0 +1,22 @@
+
+body {
+  background-color: black;
+}
+h1 {
+  color: yellow;
+}
+.square {
+  width: 100px;
+  height: 100px;
+  background: red;
+  float: left;
+}
+.square.yellow {
+  background: yellow;
+}
+.square.green {
+  background: green;
+}
+.square.pink {
+  background: pink;
+}

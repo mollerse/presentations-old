@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>Rapid Prototyping med Node.js</title>
+
+        <link rel="stylesheet" href="./css/reveal.min.css">
+        <link rel="stylesheet" href="./css/theme/night.css">
+    </head>
+
+    <body>
+
+        <div class="reveal">
+
+            <div class="slides">
+
+                <section>
+                    <h2>Rapid Prototyping</h2>
+                    <h2>med Node.js!</h2>
+                    <p>Minikonferanse 2013</p>
+                    <p>Stian Veum Møllersen / <a href="http://twitter.com/mollerse">@mollerse</a></p>
+                    <p><a href="http://open.bekk.no">open.bekk.no</a></p>
+                </section>
+
+                <section>
+                    <h3>NPM + Browserify</h3>
+                    <p>Sweet sweet modules</p>
+                </section>
+
+                <section>
+                    <h3>Less</h3>
+                    <p>Gotta have them preprocessors</p>
+                </section>
+
+                <section>
+                    <h3>Watch + LiveReload</h3>
+                    <p>Full speed ahead!</p>
+                </section>
+
+                <section>
+                    <h3>Grunt</h3>
+                    <p>Automate everything \0/</p>
+                </section>
+
+                <section>
+                    <h3>Example: Templates</h3>
+                    <p>Browserify + transforms</p>
+                </section>
+
+                <section>
+                    <h3>DEMO</h3>
+                    <p>cd example && grunt dev</p>
+                </section>
+
+                <section>
+                    <h2>Takk for meg!</h2>
+                </section>
+
+            </div>
+
+        </div>
+
+        <script src="./lib/js/head.min.js"></script>
+        <script src="./js/reveal.min.js"></script>
+
+        <script>
+
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; }},
+                    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
+
+        </script>
+
+    </body>
+</html>
