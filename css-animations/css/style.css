@@ -1,0 +1,164 @@
+#eye {
+  width: 200px;
+  height: 200px;
+  background-color: red;
+  border-radius: 100px;
+  position: relative; }
+
+#ball {
+  width: 100px;
+  height: 100px;
+  background: white;
+  border-radius: 50px; }
+
+#pupil {
+  width: 20px;
+  height: 50px;
+  background: black;
+  border-radius: 25px; }
+
+#ball, #pupil {
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0; }
+
+#a-example1 #eye {
+  animation-name: roll;
+  animation-duration: 2s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+  animation-direction: alternate; }
+
+#a-example2 #eye.active, #a-example3 #eye.active, #a-example4 #eye.active {
+  animation-name: eroll;
+  animation-duration: 2s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: none; }
+
+#a-example2 #eye.active {
+  animation-iteration-count: 4; }
+
+#a-example3 #eye.active {
+  animation-name: eroll;
+  animation-duration: 2s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: none; }
+
+@keyframes roll {
+  0% {
+    transform: translateX(0) rotate(0);
+    background-color: red; }
+
+  30% {
+    transform: translateX(200px) rotate(1turn);
+    background-color: #bada55; }
+
+  100% {
+    transform: translateX(600px) rotate(2turn);
+    background-color: hotpink; } }
+
+@keyframes eroll {
+  0% {
+    transform: translateX(0) rotate(0);
+    background-color: red; }
+
+  100% {
+    transform: translateX(600px) rotate(2turn);
+    background-color: hotpink; } }
+
+.timingfunctions {
+  font-family: sans-serif; }
+  .timingfunctions .ball {
+    fill: red;
+    animation-name: move;
+    animation-duration: 6s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite; }
+  .timingfunctions .line {
+    stroke: lime;
+    stroke-width: 4; }
+    .timingfunctions .line.blue {
+      stroke: blue; }
+  .timingfunctions .marker {
+    fill: lime; }
+  .timingfunctions text {
+    fill: white;
+    font-size: 25px; }
+  .timingfunctions #linear {
+    animation-timing-function: linear; }
+  .timingfunctions #easein {
+    animation-timing-function: ease-in; }
+  .timingfunctions #easeout {
+    animation-timing-function: ease-out; }
+  .timingfunctions #easeinout {
+    animation-timing-function: ease-in-out; }
+  .timingfunctions #bezier {
+    animation-timing-function: cubic-bezier(0.1, 0.7, 1, 0.1); }
+  .timingfunctions #steps {
+    animation-timing-function: steps(6, end); }
+  .timingfunctions #ease {
+    animation-timing-function: ease; }
+
+@keyframes move {
+  from {
+    transform: translateX(0px); }
+
+  to {
+    transform: translateX(400px); } }
+
+#example {
+  fill: red;
+  transition: 1s;
+  transform-origin: 300px 150px;
+  transform: rotate(0); }
+  #example:hover {
+    fill: #bada55;
+    transform: rotate(0.375turn); }
+
+#example2 {
+  fill: red;
+  transform-origin: 300px 150px;
+  transform: rotate(0); }
+  #example2:hover {
+    transition: 1s;
+    fill: #bada55;
+    transform: rotate(0.375turn); }
+
+#example3 {
+  fill: red;
+  transition-property: all;
+  transition-duration: 1s;
+  transform-origin: 300px 150px;
+  transform: rotate(0); }
+  #example3:hover {
+    fill: #bada55;
+    transform: rotate(0.375turn); }
+
+#example4 {
+  fill: red;
+  transition-property: all;
+  transition-duration: 1s;
+  transition-delay: 0s;
+  transform-origin: 300px 150px;
+  transform: rotate(0); }
+  #example4:hover {
+    fill: #bada55;
+    transform: rotate(0.375turn); }
+
+#example5 {
+  fill: red;
+  transform-origin: 300px 150px;
+  transform: translateY(0px);
+  transition-property: transform;
+  transition-duration: 2s;
+  transition-delay: 0s;
+  transition-timing-function: ease; }
+  #example5.active {
+    transform: translateY(200px); }
