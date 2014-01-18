@@ -17,8 +17,8 @@
             <div class="slides">
 
                 <section>
-                    <h2>Tittel</h2>
-                    <p>Sted År</p>
+                    <h2>Fremtidsrettet webgrafikk med SVG</h2>
+                    <p>BartJS - Februar 2013</p>
                     <p>Stian Veum Møllersen / <a href="http://twitter.com/mollerse">@mollerse</a></p>
                     <p><a href="http://open.bekk.no">open.bekk.no</a></p>
                 </section>
@@ -47,10 +47,11 @@
         <script>
 
             Reveal.initialize({
-                controls: true,
-                progress: true,
+                controls: false,
+                progress: false,
                 history: true,
                 center: true,
+                transition: 'none',
                 dependencies: [
                     { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; }},
                     { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
