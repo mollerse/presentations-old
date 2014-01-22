@@ -20,5 +20,6 @@
   - Syntax
   - Dynamisk generering
   - Tweening
+ - Ytelse?
 
 ## Wrapup
