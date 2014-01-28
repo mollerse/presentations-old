@@ -8,6 +8,7 @@
 
         <link rel="stylesheet" href="./css/reveal.min.css">
         <link rel="stylesheet" href="./css/theme/night.css">
+        <link rel="stylesheet" href="./css/theme/bartjs.css">
     </head>
 
     <body>
@@ -17,19 +18,156 @@
             <div class="slides">
 
                 <section>
-                    <h2>Fremtidsrettet webgrafikk med SVG</h2>
+                    <h1>Fremtidsrettet webgrafikk med SVG</h1>
                     <p>BartJS - Februar 2013</p>
                     <p>Stian Veum Møllersen / <a href="http://twitter.com/mollerse">@mollerse</a></p>
                     <p><a href="http://open.bekk.no">open.bekk.no</a></p>
                 </section>
 
                 <section>
+                    <h2>SVG recap</h2>
+                    <aside class="notes">
+                        Vi starter med en kjapp introduksjon til SVG, Scalable Vector Graphics, og hva det er, for de som ikke har vært borti det før.
+                    </aside>
+                </section>
 
+                <section>
+                    <h3>Vektor-grafikk</h3>
+                    <p>Hvert element defineres som en vektor eller en geometrisk figur</p>
+                    <aside class="notes">SVG er vektorgrafikk. Som betyr at hvert element defineres som en vektor eller en geometrisk figur. En vektor, for de som har klart å fortrenge det fra skolegangen, er en matematisk enhet med lengde og retning, eller linjen mellom 2 punkter. Som er litt enklere å visualisere.</aside>
+                </section>
+
+                <section>
+                    <h3>Vektor vs Punktgrafikk</h3>
+                    <img src="assets/VectorBitmapExample.png" alt="Raster vs Vektor">
+                    <aside class="notes">Hvorfor liker vi vektorgrafikk? Det er uendelig skalerbart. Fordi, sammenligned med punktgrafikk, eller rastergrafikk, som har en fargeverdi per pixel eller punkt, kan vektorgrafikk representeres nøyaktig selv på veldig høye zoomnivåer.
+                    </aside>
+                </section>
+
+                <section>
+                    <h3>SVG på webben</h3>
+                    <a href="http://caniuse.com/#search=svg">caniuse.com</a>
+                    <img src="assets/svgsupport.png" alt="">
+                    <aside class="notes">Vært en standard siden 2001. Støtten er god i alt bortsett fra IE8 og nedover, samt at en del mangler i Android 2.x og iOS 4.x og nedover hovedsaklig på inline SVG. Hvorfor nå? Retina skjermer og alltime low på krav om legacy støtte.</aside>
+                </section>
+
+                <section>
+                    <h3>(╯°□°）╯︵ ┻━┻</h3>
+                    <p>Legacy browsers</p>
+                    <aside class="notes">VML som fallback i eldre IE, det er nå offisielt deprecated. Kjipere utgave av SVG. Feature detection med modernizr for de andre platformene.</aside>
+                </section>
+
+                <section>
+                    <h3>Good news</h3>
+                    <img src="assets/browsers.png" alt="">
+                    <aside class="notes">IE8 og nedover er forsvinnende liten. iOS er ofte oppdatert og Android native browser er nesten ikke synlig en gang. Men husk å sjekke dine egne statistikker!</aside>
+                </section>
+
+                <section>
+                    <h2>SVG og JavaScript</h2>
+                    <aside class="notes">Det er jo derfor vi er her</aside>
+                </section>
+
+                <section>
+                    <h3>Dynamisk generert og programmatisk tilgjengelig grafikk</h3>
+                    <aside class="notes">Det er utrolig fett hva som blir mulig når du åpner disse to dørene.</aside>
+                </section>
+
+                <section>
+                    <h3>[Insert awesome SVG demo here]</h3>
+                </section>
+
+                <section>
+                    Måter å skrive SVG på; Inline SVG
+                </section>
+
+                <section>
+                    Måter å skrive SVG på; Plain JS
+                </section>
+
+                <section>
+                    Måter å skrive SVG på; jQuery?
+                </section>
+
+                <section>
+                    Bruke assets fra designere
+                </section>
+
+                <section>
+                    Hooke seg inn på embedded stuff. Object yay, img nay. Vise Object.getDocument example.
+                </section>
+
+                <section>
+                    Embedde assets via templating(sync) eller ajax(async)
+                </section>
+
+                <section>
+                    Jobbe med assets; Plain JS
+                </section>
+
+                <section>
+                    YAY LIBS
+                </section>
+
+                <section>
+                    General purpose: Snap.svg og Raphael
+                </section>
+
+                <section>
+                    Spesialiserte libs: D3, har jeg noen andre?
+                </section>
+
+                <section>
+                    Vi kjører på med Snap.svg for demos
+                </section>
+
+                <section>
+                    Shapes
+                </section>
+
+                <section>
+                    Paths
+                </section>
+
+                <section>
+                    Text, Images and other things
+                </section>
+
+                <section>
+                    Assets med Snap (Snap.load())
+                </section>
+
+                <section>
+                    Events
+                </section>
+
+                <section>
+                    Transforms
+                </section>
+
+                <section>
+                    Paths magi #1: Tweening
+                </section>
+
+                <section>
+                    Paths magi #2: Animerte paths
+                </section>
+
+                <section>
+                    Pitfalls; Ytelse
+                </section>
+
+                <section>
+                    SVG vs Canvas/WebGL
+                </section>
+
+                <section>
+                    <h2>Wrap up</h2>
                 </section>
 
                 <section>
                     <h3>Spørsmål, tilbakemeldinger, kjeft etc</h3>
-                    <h3><a href="http://www.github.com/mollerse">@mollerse</a></h3>
+                    <h3><a href="http://www.twitter.com/mollerse">@mollerse</a></h3>
                     <h3><a href="mailto:stian.veum.mollersen@bekk.no">stian.veum.mollersen@bekk.no</a></h3>
                 </section>
 
@@ -60,5 +198,7 @@
 
         </script>
 
-    </body>
+
+        <script type="text/javascript">document.write('<script src="' + (location.protocol || 'http:') + '//' + (location.hostname || 'localhost') + ':35729/livereload.js?snipver=1" type="text/javascript"><\/script>')</script>
+</body>
 </html>
