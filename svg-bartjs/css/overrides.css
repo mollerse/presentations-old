@@ -1,0 +1,13 @@
+.reveal section .no-fuzz {
+  border: none;
+  background: none;
+  box-shadow: none;
+}
+
+.reveal iframe {
+  display: inline-block;
+  border: none;
+  height: 200px;
+  width: 400px;
+  margin: 10px;
+}

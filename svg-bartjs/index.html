@@ -9,6 +9,8 @@
         <link rel="stylesheet" href="./css/reveal.min.css">
         <link rel="stylesheet" href="./css/theme/night.css">
         <link rel="stylesheet" href="./css/theme/bartjs.css">
+        <link rel="stylesheet" href="./css/tomorrow-night-bright.css">
+        <link rel="stylesheet" href="./css/overrides.css">
     </head>
 
     <body>
@@ -65,7 +67,7 @@
 
                 <section>
                     <h2>SVG og JavaScript</h2>
-                    <aside class="notes">Det er jo derfor vi er her</aside>
+                    <aside class="notes">Så, la oss snakke litt om SVG og JavaScript, det er jo derfor vi er her.</aside>
                 </section>
 
                 <section>
@@ -74,63 +76,123 @@
                 </section>
 
                 <section>
-                    <h3>[Insert awesome SVG demo here]</h3>
+                    <h3><a href="http://mbostock.github.io/d3/talk/20111116/force-collapsible.html">Demo</a></h3>
                 </section>
 
                 <section>
-                    Måter å skrive SVG på; Inline SVG
+                    <h3>Kilder til SVG</h3>
+                    <ul>
+                        <li>Håndskrevet</li>
+                        <li>Eksportert</li>
+                    </ul>
                 </section>
 
                 <section>
-                    Måter å skrive SVG på; Plain JS
+                    <h3>Håndskrevet</h3>
+                    <p class="fragment" data-fragment-index="0">&lt;circle cx="25" cy="25" r="20" fill="green" /&gt;</p>
                 </section>
 
                 <section>
-                    Måter å skrive SVG på; jQuery?
+                    <h3>Håndskrevet</h3>
+                    <pre class="fragment" data-fragment-index="0"><code class="javascript">var shape = svgDocument.createElementNS(svgns, "circle");
+shape.setAttributeNS(null, "cx", 25);
+shape.setAttributeNS(null, "cy", 25);
+shape.setAttributeNS(null, "r",  20);
+shape.setAttributeNS(null, "fill", "green");</code></pre>
                 </section>
 
                 <section>
-                    Bruke assets fra designere
+                    <h3>Eksportert</h3>
+                    <p><span>Photoshop, Indesign, Inkscape </span><span class="fragment" data-fragment-index="1">&mdash; Designere</span></p>
                 </section>
 
                 <section>
-                    Hooke seg inn på embedded stuff. Object yay, img nay. Vise Object.getDocument example.
+                    <h3>Inkludere eksporterte SVGer</h3>
+                    <p>&lt;img src="some.svg" /&gt;</p>
+                </section>
+                <section>
+                    <h3>Inkludere eksporterte SVGer</h3>
+                    <strike><p>&lt;img src="some.svg" /&gt;</p></strike>
+                    <p class="fragment" data-fragment-index="0">&lt;object data="some.svg" type="image/svg+xml" /&gt;</p>
+                    <aside class="notes">På denne måten blir svg'en vår et sub-dokument. Og vi kan hooke oss inn i det via javascript.</aside>
                 </section>
 
                 <section>
-                    Embedde assets via templating(sync) eller ajax(async)
+                    <h3>Jobbe med eksporterte SVGer</h3>
+                    <pre class="fragment"><code>var svgObject = document.getElementById("object").contentDocument;</code></pre>
+                    <pre class="fragment"><code>svgObject.getElementById("circle").addEventListener("click", function() {
+   console.log("clicked");
+});</code></pre>
+                    <aside class="notes">Her kan vi hooke oss inn i SVGen, men det er ikke like nice som å jobbe på SVG som er embedded rett i DOMen.</aside>
                 </section>
 
                 <section>
-                    Jobbe med assets; Plain JS
+                    <h3>Embedde SVG</h3>
+                    <ul>
+                        <li class="fragment">Serverside</li>
+                        <li class="fragment">Clientside</li>
+                    </ul>
+                    <aside class="notes">Embedde SVGer kan gjøres på i hovedsak to måter. Serverside, som en del av asset pipelinen din. Siden SVG bare er markup kan du embedde det rett i HTMLen din, som du ville gjort med en template. Eller du kan laste det inn async på klientenen og embedde det der.</aside>
                 </section>
 
                 <section>
-                    YAY LIBS
+                    <h3>Jobbe med embedded SVG</h3>
+                    <p>Ikke ulikt vanlig DOM manipulasjon</p>
                 </section>
 
                 <section>
-                    General purpose: Snap.svg og Raphael
+                    <h3 class="fragment">Liberaries <span class="fragment">(⌐■_■)</span></h3>
+                    <aside class="notes">Fordi det ikke alltid er like behagelig å jobbe rett på DOM-apiene, og vi er jo veldig glade i abstraksjoner. I tillegg så er det ikke alltid like greit å håndtere edgecases og quirks mellom browsere. Så er dette tidspunktet for å ta inn libs. Yeaaah.</aside>
                 </section>
 
                 <section>
-                    Spesialiserte libs: D3, har jeg noen andre?
+                    <h3>Generelle biblotek</h3>
+                    <p>Raphaël</p>
+                    <img class="no-fuzz" src="assets/raphael.png" alt="raphael">
+                    <aside class="notes">Sikkert mange som har hørt om Raphael fra før. Det har eksistert en god stund og har blandt annet bakoverkompabilitet til eldre IE (5.5 tror jeg). Men bakoverkompabiliteten koster i form av utelatte features.</aside>
                 </section>
 
                 <section>
-                    Vi kjører på med Snap.svg for demos
+                    <h3>Generelle biblotek</h3>
+                    <p>Snap.svg</p>
+                    <iframe src="assets/snap.html" frameborder="0"></iframe>
+                    <aside class="notes">Snap.svg kom på høsten i fjor, og er på mange måter Raphael2.0. Laget av de samme folka, med stort sett det samme APIet. Siden de dropper bakoverkompat så kan vi også bruke det meste av SVG features.</aside>
                 </section>
 
                 <section>
-                    Shapes
+                    <h3>Spesialiserte biblotek</h3>
+                    <ul>
+                        <li>D3.js</li>
+                        <li>Graphael</li>
+                        <li>m.fl.</li>
+                    </ul>
+                    <aside class="notes">Det finnes også mange spesialiserte SVG bibloteker. De fleste av dem dreier seg om datavisualisering. Tenkte jeg ikke skulle gå så nærme inn på disse.</aside>
                 </section>
 
                 <section>
-                    Paths
+                    <h3>SVG + JavaScript</h3>
+                    <p> med Snap.svg</p>
+                    <aside class="notes">Så vi ser heller nærmere på Snap.svg og hva vi kan gjøre med det for å lage grafikk.</aside>
                 </section>
 
                 <section>
-                    Text, Images and other things
+                    Demo Shapes (Rect and Circle)
+                </section>
+
+                <section>
+                    Attributes
+                </section>
+
+                <section>
+                    Demo Paths
+                </section>
+
+                <section>
+                    Path syntax
+                </section>
+
+                <section>
+                    Text, Images, Polygons, Multiline, Line etc
                 </section>
 
                 <section>
@@ -146,6 +208,10 @@
                 </section>
 
                 <section>
+                    Animations
+                </section>
+
+                <section>
                     Paths magi #1: Tweening
                 </section>
 
@@ -154,11 +220,12 @@
                 </section>
 
                 <section>
-                    Pitfalls; Ytelse
+                    Ting å tenke på: Ytelse
                 </section>
 
                 <section>
                     SVG vs Canvas/WebGL
+                    <aside class="notes">Things vs actions</aside>
                 </section>
 
                 <section>
@@ -192,7 +259,8 @@
                 transition: 'none',
                 dependencies: [
                     { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; }},
-                    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList;}},
+                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad();}},
                 ]
             });
 
