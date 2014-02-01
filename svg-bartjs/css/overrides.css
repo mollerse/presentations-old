@@ -11,3 +11,16 @@
   width: 400px;
   margin: 10px;
 }
+
+textarea {
+  height: 380px; width: 380px; margin: 0; border: none;
+  background: #111;
+  font-size: 0.8em;
+  color: #ddd;
+  padding: 10px;
+}
+
+textarea:focus {
+  border: none;
+  outline: none;
+}

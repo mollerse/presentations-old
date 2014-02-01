@@ -11,6 +11,8 @@
         <link rel="stylesheet" href="./css/theme/bartjs.css">
         <link rel="stylesheet" href="./css/tomorrow-night-bright.css">
         <link rel="stylesheet" href="./css/overrides.css">
+
+        <script type="text/javascript" src="snap.svg-min.js"></script>
     </head>
 
     <body>
@@ -176,7 +178,28 @@ shape.setAttributeNS(null, "fill", "green");</code></pre>
                 </section>
 
                 <section>
-                    Demo Shapes (Rect and Circle)
+                    <h3>Grunnleggende shapes</h3>
+                    <textarea>
+var p = Snap("#s");
+
+/*rect(x, y, w, h)*/
+
+var rect = p.rect(20,20,100,100);</textarea>
+                    <svg id="s" width="400" height="400" style="background: #000"></svg>
+                    <script type="text/javascript">
+                        var code = document.querySelectorAll("textarea")[0];
+                        var svg = document.querySelectorAll("#s")[0];
+                        code.addEventListener('keyup', function() {
+                            svg.innerHTML = "";
+                            eval(code.value);
+                        });
+                        //First load
+                        svg.innerHTML = "";
+                        eval(code.value);
+                    </script>
+                    <style>
+                        rect {fill: #f00;}
+                    </style>
                 </section>
 
                 <section>
