@@ -179,16 +179,16 @@ shape.setAttributeNS(null, "fill", "green");</code></pre>
 
                 <section>
                     <h3>Grunnleggende shapes</h3>
-                    <textarea>
-var p = Snap("#s");
+                    <textarea id="a1">
+var p = Snap("#s1");
 
 /*rect(x, y, w, h)*/
 
 var rect = p.rect(20,20,100,100);</textarea>
-                    <svg id="s" width="400" height="400" style="background: #000"></svg>
+                    <svg id="s1" width="400" height="400" style="background: #000"></svg>
                     <script type="text/javascript">
-                        var code = document.querySelectorAll("textarea")[0];
-                        var svg = document.querySelectorAll("#s")[0];
+                        var code = document.querySelectorAll("#a1")[0];
+                        var svg = document.querySelectorAll("#s1")[0];
                         code.addEventListener('keyup', function() {
                             svg.innerHTML = "";
                             eval(code.value);
@@ -198,24 +198,100 @@ var rect = p.rect(20,20,100,100);</textarea>
                         eval(code.value);
                     </script>
                     <style>
-                        rect {fill: #f00;}
+                        #s1 rect {fill: #f00;}
                     </style>
                 </section>
 
                 <section>
-                    Attributes
+                    <h3>Endre egenskaper</h3>
+                    <textarea id="a2">
+var p = Snap("#s2");
+var rect = p.rect(20,20,100,100);
+
+rect.attr({
+  fill:'#f00',
+  stroke:'#f00',
+  strokeWidth:3
+});</textarea>
+                    <svg id="s2" width="400" height="400" style="background: #000"></svg>
+                    <script type="text/javascript">
+                        var code = document.querySelectorAll("#a2")[0];
+                        var svg = document.querySelectorAll("#s2")[0];
+                        code.addEventListener('keyup', function() {
+                            svg.innerHTML = "";
+                            eval(code.value);
+                        });
+                        //First load
+                        svg.innerHTML = "";
+                        eval(code.value);
+                    </script>
                 </section>
 
                 <section>
-                    Demo Paths
+                    <h3>Paths</h3>
+                    <textarea id="a3">
+var p = Snap("#s3");
+var path = p.path("M 20 20 L 20 150 L 200 150 L 20 20 Z");</textarea>
+                    <svg id="s3" width="400" height="400" style="background: #000"></svg>
+                    <script type="text/javascript">
+                        var code = document.querySelectorAll("#a3")[0];
+                        var svg = document.querySelectorAll("#s3")[0];
+                        code.addEventListener('keyup', function() {
+                            svg.innerHTML = "";
+                            eval(code.value);
+                        });
+                        //First load
+                        svg.innerHTML = "";
+                        eval(code.value);
+                    </script>
+                    <style>
+                    #s3 path {stroke: #f00; stroke-width: 10; stroke-linejoin: round;}
+                    </style>
                 </section>
 
                 <section>
-                    Path syntax
+                    <h3>Path syntax</h3>
+                    <p><a href="http://www.w3.org/TR/SVG/paths.html#PathData">W3 Spec</a></p>
+                    <table>
+                        <thead><tr><th>Command</th><th>Name</th></tr></thead>
+                        <tbody>
+                            <tr><td>M</td><td>moveto</td></tr>
+                            <tr><td>Z</td><td>closepath</td></tr>
+                            <tr><td>L</td><td>lineto</td></tr>
+                            <tr><td>H</td><td>horizontal lineto</td></tr>
+                            <tr><td>V</td><td>vertical lineto</td></tr>
+                            <tr><td>C</td><td>curveto</td></tr>
+                            <tr><td>S</td><td>smooth curveto</td></tr>
+                            <tr><td>Q</td><td>quadratic Bézier curveto</td></tr>
+                            <tr><td>T</td><td>smooth quadratic Bézier curveto</td></tr>
+                            <tr><td>A</td><td>elliptical arc</td></tr>
+                        </tbody>
+                    </table>
                 </section>
 
                 <section>
-                    Text, Images, Polygons, Multiline, Line etc
+                    <h3>Paths.js</h3>
+                    <p><a href="https://github.com/andreaferretti/paths-js">Source</a></p>
+                    <pre><code>var Path = require('paths/path');
+var path = Path()
+  .moveto(10, 20)
+  .lineto(30, 50)
+  .lineto(25, 28)
+  .qcurveto(27, 30, 32, 27)
+  .closepath();</code></pre>
+
+                </section>
+
+                <section>
+                    <h3>Andre grafiske elementer</h3>
+                    <ul>
+                        <li>&lt;ellipse&gt;</li>
+                        <li>&lt;image&gt;</li>
+                        <li>&lt;line&gt;</li>
+                        <li>&lt;polygon&gt;</li>
+                        <li>&lt;polyline&gt;</li>
+                        <li>&lt;text&gt;</li>
+                    </ul>
                 </section>
 
                 <section>
@@ -235,11 +311,11 @@ var rect = p.rect(20,20,100,100);</textarea>
                 </section>
 
                 <section>
-                    Paths magi #1: Tweening
+                    Viewbox
                 </section>
 
                 <section>
-                    Paths magi #2: Animerte paths
+                    Paths magi: Animerte paths
                 </section>
 
                 <section>

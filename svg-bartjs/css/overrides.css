@@ -24,3 +24,11 @@ textarea:focus {
   border: none;
   outline: none;
 }
+
+.reveal table {
+  margin: 0 auto;
+}
+
+.reveal table td {
+  width: 50%;
+}
