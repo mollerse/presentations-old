@@ -13,7 +13,7 @@
 }
 
 textarea {
-  height: 380px; width: 380px; margin: 0; border: none;
+  height: 380px; width: 530px; margin: 0; border: none;
   background: #111;
   font-size: 0.8em;
   color: #ddd;
@@ -31,4 +31,9 @@ textarea:focus {
 
 .reveal table td {
   width: 50%;
+}
+
+.reveal button {
+  font-size: 1em;
+  padding: 0.25em 0.5em;
 }
