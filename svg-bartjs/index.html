@@ -1,208 +1,214 @@
 <!doctype html>
 <html lang="en">
 
-    <head>
-        <meta charset="utf-8">
+<head>
+  <meta charset="utf-8">
 
-        <title>Tittel</title>
+  <title>Fremtidsrettet webgrafikk med SVG</title>
 
-        <link rel="stylesheet" href="./css/reveal.min.css">
-        <link rel="stylesheet" href="./css/theme/night.css">
-        <link rel="stylesheet" href="./css/theme/bartjs.css">
-        <link rel="stylesheet" href="./css/tomorrow-night-bright.css">
-        <link rel="stylesheet" href="./css/overrides.css">
+  <link rel="stylesheet" href="./css/reveal.min.css">
+  <link rel="stylesheet" href="./css/theme/night.css">
+  <link rel="stylesheet" href="./css/theme/bartjs.css">
+  <link rel="stylesheet" href="./css/tomorrow-night-bright.css">
+  <link rel="stylesheet" href="./css/overrides.css">
 
-        <script type="text/javascript" src="snap.svg-min.js"></script>
-    </head>
+  <script type="text/javascript" src="snap.svg-min.js"></script>
+</head>
 
-    <body>
+<body>
 
-        <div class="reveal">
+  <div class="reveal">
 
-            <div class="slides">
+    <div class="slides">
 
-                <section>
-                    <h1>Fremtidsrettet webgrafikk med SVG</h1>
-                    <p>BartJS - Februar 2013</p>
-                    <p>Stian Veum Møllersen / <a href="http://twitter.com/mollerse">@mollerse</a></p>
-                    <p><a href="http://open.bekk.no">open.bekk.no</a></p>
-                </section>
+      <section>
+        <h1>Fremtidsrettet webgrafikk med SVG</h1>
+        <p>BartJS - Februar 2013</p>
+        <p>Stian Veum Møllersen / <a href="http://twitter.com/mollerse">@mollerse</a></p>
+        <p><a href="http://open.bekk.no">open.bekk.no</a></p>
+        <aside class="notes">Hei, jeg heter Stian og jeg skal prate litt om SVG og hvordan vi kan bruke det til å lage fremtidsretta grafikk på webben.</aside>
+      </section>
 
-                <section>
-                    <h2>SVG recap</h2>
-                    <aside class="notes">
-                        Vi starter med en kjapp introduksjon til SVG, Scalable Vector Graphics, og hva det er, for de som ikke har vært borti det før.
-                    </aside>
-                </section>
+      <section>
+        <h2>Intro til SVG</h2>
+        <aside class="notes">Det er sikkert noen som ikke har vært borti SVG før, så vi starter med en kjapp introduksjon til SVG, Scalable Vector Graphics, og hva det er.</aside>
+      </section>
 
-                <section>
-                    <h3>Vektor-grafikk</h3>
-                    <p>Hvert element defineres som en vektor eller en geometrisk figur</p>
-                    <aside class="notes">SVG er vektorgrafikk. Som betyr at hvert element defineres som en vektor eller en geometrisk figur. En vektor, for de som har klart å fortrenge det fra skolegangen, er en matematisk enhet med lengde og retning, eller linjen mellom 2 punkter. Som er litt enklere å visualisere.</aside>
-                </section>
+      <section>
+        <h3>Vektorgrafikk</h3>
+        <p class="fragment">Hvert element defineres som en vektor eller en geometrisk figur</p>
+        <aside class="notes">SVG er vektorgrafikk. Som betyr at hvert element defineres som en vektor eller en geometrisk figur. En vektor, for de som har klart å fortrenge det fra skolegangen, er en matematisk enhet med lengde og retning, eller linjen mellom 2 punkter. Som er litt enklere å visualisere.</aside>
+      </section>
 
-                <section>
-                    <h3>Vektor vs Punktgrafikk</h3>
-                    <img src="assets/VectorBitmapExample.png" alt="Raster vs Vektor">
-                    <aside class="notes">Hvorfor liker vi vektorgrafikk? Det er uendelig skalerbart. Fordi, sammenligned med punktgrafikk, eller rastergrafikk, som har en fargeverdi per pixel eller punkt, kan vektorgrafikk representeres nøyaktig selv på veldig høye zoomnivåer.
-                    </aside>
-                </section>
+      <section>
+        <h3>Vektor vs Punktgrafikk</h3>
+        <img src="assets/VectorBitmapExample.png" alt="Raster vs Vektor">
+        <aside class="notes">Hvorfor liker vi vektorgrafikk? Det er uendelig skalerbart. Derav navnet Scalable. Fordi, sammenligned med punktgrafikk, eller rastergrafikk, som har en fargeverdi per pixel eller punkt, kan vektorgrafikk representeres nøyaktig selv på veldig høye zoomnivåer.</aside>
+      </section>
 
-                <section>
-                    <h3>SVG på webben</h3>
-                    <a href="http://caniuse.com/#search=svg">caniuse.com</a>
-                    <img src="assets/svgsupport.png" alt="">
-                    <aside class="notes">Vært en standard siden 2001. Støtten er god i alt bortsett fra IE8 og nedover, samt at en del mangler i Android 2.x og iOS 4.x og nedover hovedsaklig på inline SVG. Hvorfor nå? Retina skjermer og alltime low på krav om legacy støtte.</aside>
-                </section>
+      <section>
+        <h3>SVG på web</h3>
+        <a href="http://caniuse.com/#search=svg">caniuse.com</a>
+        <img src="assets/svgsupport.png" alt="">
+        <aside class="notes">SVG har vært en standard siden 2001 og støtten er god i alt bortsett fra IE8 og nedover, samt at en del mangler i Android 2.x og iOS 4.x og nedover hovedsaklig på inline SVG. Hvorfor nå? Retina skjermer og alltime low på krav om legacy støtte.</aside>
+      </section>
 
-                <section>
-                    <h3>(╯°□°）╯︵ ┻━┻</h3>
-                    <p>Legacy browsers</p>
-                    <aside class="notes">VML som fallback i eldre IE, det er nå offisielt deprecated. Kjipere utgave av SVG. Feature detection med modernizr for de andre platformene.</aside>
-                </section>
+      <section>
+        <h3>(╯°□°）╯︵ ┻━┻</h3>
+        <p>Legacy browsers</p>
+        <aside class="notes">VML som fallback i eldre IE, det er nå offisielt deprecated. Kjipere utgave av SVG. Feature detection med modernizr for de andre platformene hvis du vil bruke SVG som bilderessurs. Dårlig med shims for inline-SVG utover VML.</aside>
+      </section>
 
-                <section>
-                    <h3>Good news</h3>
-                    <img src="assets/browsers.png" alt="">
-                    <aside class="notes">IE8 og nedover er forsvinnende liten. iOS er ofte oppdatert og Android native browser er nesten ikke synlig en gang. Men husk å sjekke dine egne statistikker!</aside>
-                </section>
+      <section>
+        <h3>Good news</h3>
+        <img src="assets/browsers.png" alt="">
+        <aside class="notes">IE8 og nedover er forsvinnende liten. iOS er ofte oppdatert og Android native browser er nesten ikke synlig en gang. Men husk å sjekke dine egne statistikker!</aside>
+      </section>
 
-                <section>
-                    <h2>SVG og JavaScript</h2>
-                    <aside class="notes">Så, la oss snakke litt om SVG og JavaScript, det er jo derfor vi er her.</aside>
-                </section>
+      <section>
+        <h2>SVG og JavaScript</h2>
+        <aside class="notes">Så, la oss snakke litt om SVG og JavaScript, det er jo derfor vi er her.</aside>
+      </section>
 
-                <section>
-                    <h3>Dynamisk generert og programmatisk tilgjengelig grafikk</h3>
-                    <aside class="notes">Det er utrolig fett hva som blir mulig når du åpner disse to dørene.</aside>
-                </section>
+      <section>
+        <h3>Dynamisk generert og programmatisk tilgjengelig grafikk</h3>
+        <aside class="notes">Det er utrolig fett hva som blir mulig når du åpner disse to dørene.</aside>
+      </section>
 
-                <section>
-                    <h3><a href="http://mbostock.github.io/d3/talk/20111116/force-collapsible.html">Demo</a></h3>
-                </section>
+      <section>
+        <h3><a href="http://mbostock.github.io/d3/talk/20111116/force-collapsible.html">Demo</a></h3>
+      </section>
 
-                <section>
-                    <h3>Kilder til SVG</h3>
-                    <ul>
-                        <li>Håndskrevet</li>
-                        <li>Eksportert</li>
-                    </ul>
-                </section>
+      <section>
+        <h3>Kilder til SVG</h3>
+        <ul>
+          <li class="fragment">Håndskrevet</li>
+          <li class="fragment">Eksportert</li>
+        </ul>
+        <aside class="notes">Det er hovedsaklig to kilder til SVG. Du kan skrive det for hånd eller eksportere det fra bildebehandlingsprogramvare.</aside>
+      </section>
 
-                <section>
-                    <h3>Håndskrevet</h3>
-                    <p class="fragment" data-fragment-index="0">&lt;circle cx="25" cy="25" r="20" fill="green" /&gt;</p>
-                </section>
+      <section>
+        <h3>Håndskrevet</h3>
+        <p class="fragment">&lt;circle cx="25" cy="25" r="20" fill="green" /&gt;</p>
+        <pre class="smaller fragment"><code class="javascript">var shape =
+  svgDocument.createElementNS(svgns, "circle");
 
-                <section>
-                    <h3>Håndskrevet</h3>
-                    <pre class="fragment" data-fragment-index="0"><code class="javascript">var shape = svgDocument.createElementNS(svgns, "circle");
-shape.setAttributeNS(null, "cx", 25);
-shape.setAttributeNS(null, "cy", 25);
-shape.setAttributeNS(null, "r",  20);
-shape.setAttributeNS(null, "fill", "green");</code></pre>
-                </section>
+  shape.setAttributeNS(null, "cx", 25);
+  shape.setAttributeNS(null, "cy", 25);
+  shape.setAttributeNS(null, "r",  20);
+  shape.setAttributeNS(null, "fill", "green");</code></pre>
+        <aside class="notes">SVG er et XML-format, og å prøve å skrive det for hånd er ikke å anbefale. Vi kan også generere SVG med de innebygde Browser APIene. Det er heller ikke så veldig behagelig.</aside>
+        </section>
 
-                <section>
-                    <h3>Eksportert</h3>
-                    <p><span>Photoshop, Indesign, Inkscape </span><span class="fragment" data-fragment-index="1">&mdash; Designere</span></p>
-                </section>
+        <section>
+          <h3>Eksportert</h3>
+          <p><span>Photoshop, Indesign, Inkscape </span><span class="fragment" data-fragment-index="1">&mdash; Designere</span></p>
+          <aside class="notes">Mange av de mest brukte bildebehandlingsverktøyene har muligheten til å eksportere SVG. Dette åpner for nye muligheter å inkludere designere i prosessen.</aside>
+        </section>
 
-                <section>
-                    <h3>Inkludere eksporterte SVGer</h3>
-                    <p>&lt;img src="some.svg" /&gt;</p>
-                </section>
-                <section>
-                    <h3>Inkludere eksporterte SVGer</h3>
-                    <strike><p>&lt;img src="some.svg" /&gt;</p></strike>
-                    <p class="fragment" data-fragment-index="0">&lt;object data="some.svg" type="image/svg+xml" /&gt;</p>
-                    <aside class="notes">På denne måten blir svg'en vår et sub-dokument. Og vi kan hooke oss inn i det via javascript.</aside>
-                </section>
+        <section>
+          <h3>Inkludere SVG assets</h3>
+          <p>&lt;img src="some.svg" /&gt;</p>
+          <p>&nbsp;</p>
+          <aside class="notes">Vi kan inkludere SVGer akkurat som vi skulle inkludert et vanlig bilde, men dette lar oss ikke få tak i de underliggende elementene.</aside>
+        </section>
+        <section>
+          <h3>Inkludere SVG assets</h3>
+          <strike><p>&lt;img src="some.svg" /&gt;</p></strike>
+          <p class="fragment">&lt;object data="some.svg" type="image/svg+xml" /&gt;</p>
+          <aside class="notes">Så da bruker vi heller object, på denne måten blir svg'en vår et sub-dokument. Og vi kan hooke oss inn i det via javascript.</aside>
+        </section>
 
-                <section>
-                    <h3>Jobbe med eksporterte SVGer</h3>
-                    <pre class="fragment"><code>var svgObject = document.getElementById("object").contentDocument;</code></pre>
-                    <pre class="fragment"><code>svgObject.getElementById("circle").addEventListener("click", function() {
-   console.log("clicked");
+        <section>
+          <h3>Jobbe med SVG assets</h3>
+          <pre class="fragment smaller"><code class="javascript">var svgObject = 
+  document.getElementById("object").contentDocument;</code></pre>
+            <pre class="fragment smaller"><code class="javascript">var circle = svgObject.getElementById("circle");
+
+circle.addEventListener("click", function() {
+  console.log("clicked");
 });</code></pre>
-                    <aside class="notes">Her kan vi hooke oss inn i SVGen, men det er ikke like nice som å jobbe på SVG som er embedded rett i DOMen.</aside>
-                </section>
+            <aside class="notes">Her kan vi hooke oss inn i SVGen, men det er ikke like behagelig som å jobbe på SVG som er embedded rett i DOMen.</aside>
+          </section>
 
-                <section>
-                    <h3>Embedde SVG</h3>
-                    <ul>
-                        <li class="fragment">Serverside</li>
-                        <li class="fragment">Clientside</li>
-                    </ul>
-                    <aside class="notes">Embedde SVGer kan gjøres på i hovedsak to måter. Serverside, som en del av asset pipelinen din. Siden SVG bare er markup kan du embedde det rett i HTMLen din, som du ville gjort med en template. Eller du kan laste det inn async på klientenen og embedde det der.</aside>
-                </section>
+          <section>
+            <h3>Inline SVG</h3>
+            <ul>
+              <li class="fragment">Serverside</li>
+              <li class="fragment">Clientside</li>
+            </ul>
+            <aside class="notes">Innbygging av SVGer kan gjøres på i hovedsak to måter. Serverside, som en del av asset pipelinen din. Siden SVG bare er markup kan du embedde det rett i HTMLen din, som du ville gjort med en template. Eller du kan laste det inn async på klientenen og embedde det der.</aside>
+          </section>
 
-                <section>
-                    <h3>Jobbe med embedded SVG</h3>
-                    <p>Ikke ulikt vanlig DOM manipulasjon</p>
-                </section>
+          <section>
+            <h3>Jobbe med inline SVG</h3>
+            <p>Ikke ulikt vanlig DOM manipulasjon</p>
+            <aside class="notes">Å jobbe med SVG som er innbygget i DOMen er egentlig ganske likt det å jobbe med vanlige DOM elementer. Du kan selecte dem med querySelector eller style dem med CSS. Men det er en del quirks her og et par ting som ikke går an.</aside>
+          </section>
 
-                <section>
-                    <h3 class="fragment">Liberaries <span class="fragment">(⌐■_■)</span></h3>
-                    <aside class="notes">Fordi det ikke alltid er like behagelig å jobbe rett på DOM-apiene, og vi er jo veldig glade i abstraksjoner. I tillegg så er det ikke alltid like greit å håndtere edgecases og quirks mellom browsere. Så er dette tidspunktet for å ta inn libs. Yeaaah.</aside>
-                </section>
+          <section>
+            <h3>Liberaries <span class="fragment">(⌐■_■)</span></h3>
+            <aside class="notes">Fordi det ikke alltid er like behagelig å jobbe rett på DOM-apiene, og vi er jo veldig glade i abstraksjoner. I tillegg så er det ikke alltid like greit å håndtere edgecases og quirks mellom browsere. Så er dette tidspunktet for å ta inn libs. Yeaaah.</aside>
+          </section>
 
-                <section>
-                    <h3>Generelle biblotek</h3>
-                    <p>Raphaël</p>
-                    <img class="no-fuzz" src="assets/raphael.png" alt="raphael">
-                    <aside class="notes">Sikkert mange som har hørt om Raphael fra før. Det har eksistert en god stund og har blandt annet bakoverkompabilitet til eldre IE (5.5 tror jeg). Men bakoverkompabiliteten koster i form av utelatte features.</aside>
-                </section>
+          <section>
+            <h3>Generelle bibliotek</h3>
+            <p>Raphaël</p>
+            <img class="no-fuzz" src="assets/raphael.png" alt="raphael">
+            <aside class="notes">Sikkert mange som har hørt om Raphael fra før. Det har eksistert en god stund og har blandt annet bakoverkompabilitet til eldre IE (5.5 tror jeg). Men bakoverkompabiliteten koster i form av utelatte features.</aside>
+          </section>
 
-                <section>
-                    <h3>Generelle biblotek</h3>
-                    <p>Snap.svg</p>
-                    <iframe src="assets/snap.html" frameborder="0"></iframe>
-                    <aside class="notes">Snap.svg kom på høsten i fjor, og er på mange måter Raphael2.0. Laget av de samme folka, med stort sett det samme APIet. Siden de dropper bakoverkompat så kan vi også bruke det meste av SVG features.</aside>
-                </section>
+          <section>
+            <h3>Generelle bibliotek</h3>
+            <p>Snap.svg</p>
+            <iframe src="assets/snap.html" frameborder="0"></iframe>
+            <aside class="notes">Snap.svg kom på høsten i fjor, og er på mange måter Raphael2.0. Laget av de samme folka, med stort sett det samme APIet. Siden de dropper bakoverkompat så kan vi også bruke det meste av SVG features.</aside>
+          </section>
 
-                <section>
-                    <h3>Spesialiserte biblotek</h3>
-                    <ul>
-                        <li>D3.js</li>
-                        <li>Graphael</li>
-                        <li>m.fl.</li>
-                    </ul>
-                    <aside class="notes">Det finnes også mange spesialiserte SVG bibloteker. De fleste av dem dreier seg om datavisualisering. Tenkte jeg ikke skulle gå så nærme inn på disse.</aside>
-                </section>
+          <section>
+            <h3>Spesialiserte bibliotek</h3>
+            <ul>
+              <li>D3.js</li>
+              <li>Graphael</li>
+              <li>m.fl.</li>
+            </ul>
+            <aside class="notes">Det finnes også mange spesialiserte SVG bibloteker. De fleste av dem dreier seg om datavisualisering. Tenkte jeg ikke skulle gå så nærme inn på disse.</aside>
+          </section>
 
-                <section>
-                    <h3>SVG + JavaScript</h3>
-                    <p> med Snap.svg</p>
-                    <aside class="notes">Så vi ser heller nærmere på Snap.svg og hva vi kan gjøre med det for å lage grafikk.</aside>
-                </section>
+          <section>
+            <h2>SVG og JavaScript</h2>
+            <p> med Snap.svg</p>
+            <aside class="notes">Så vi ser heller nærmere på Snap.svg og hva vi kan gjøre med det for å lage grafikk.</aside>
+          </section>
 
-                <section>
-                    <h3>Grunnleggende shapes</h3>
-                    <textarea id="a1">
+          <section>
+            <h3>Grunnleggende shapes</h3>
+            <textarea id="a1">
 var p = Snap("#s1");
 
 var rect = p.rect(20,20,100,100);</textarea>
-                    <svg id="s1" width="400" height="400" style="background: #000"></svg>
-                    <script type="text/javascript">
-                        var code = document.querySelectorAll("#a1")[0];
-                        var svg = document.querySelectorAll("#s1")[0];
-                        code.addEventListener('keyup', function() {
-                            svg.innerHTML = "";
-                            eval(code.value);
-                        });
-                        //First load
-                        svg.innerHTML = "";
-                        eval(code.value);
-                    </script>
-                    <style>
-                        #s1 rect {fill: #f00;}
-                    </style>
-                </section>
+            <svg id="s1" width="400" height="400" style="background: #000"></svg>
+             <script type="text/javascript">
+              var code1 = document.querySelectorAll("#a1")[0];
+              var svg1 = document.querySelectorAll("#s1")[0];
+              code1.addEventListener('keyup', function() {
+                svg1.innerHTML = "";
+                eval(code1.value);
+              });
+              //First load
+              svg1.innerHTML = "";
+              eval(code1.value);
+            </script>
+            <style>
+              #s1 rect {fill: #f00;}
+              #s1 circle {fill: #f00;}
+            </style>
+          </section>
 
-                <section>
-                    <h3>Endre egenskaper</h3>
-                    <textarea id="a2">
+          <section>
+            <h3>Endre egenskaper</h3>
+            <textarea id="a2">
 var p = Snap("#s2");
 var rect = p.rect(20,20,100,100);
 
@@ -211,260 +217,257 @@ rect.attr({
   stroke:'#f00',
   strokeWidth:3
 });</textarea>
-                    <svg id="s2" width="400" height="400" style="background: #000"></svg>
-                    <script type="text/javascript">
-                        var code = document.querySelectorAll("#a2")[0];
-                        var svg = document.querySelectorAll("#s2")[0];
-                        code.addEventListener('keyup', function() {
-                            svg.innerHTML = "";
-                            eval(code.value);
-                        });
-                        //First load
-                        svg.innerHTML = "";
-                        eval(code.value);
-                    </script>
-                </section>
+            <svg id="s2" width="400" height="400" style="background: #000"></svg>
+            <script type="text/javascript">
+              var code2 = document.querySelectorAll("#a2")[0];
+              var svg2 = document.querySelectorAll("#s2")[0];
+              code2.addEventListener('keyup', function() {
+                svg2.innerHTML = "";
+                eval(code2.value);
+              });
+              //First load
+              svg2.innerHTML = "";
+              eval(code2.value);
+            </script>
+          </section>
 
-                <section>
-                    <h3>Paths</h3>
-                    <textarea id="a3">
+          <section>
+            <h3>Paths</h3>
+            <textarea id="a3">
 var p = Snap("#s3");
+
 var path = p.path("M 20 20 L 20 150 L 200 150 L 20 20 Z");</textarea>
-                    <svg id="s3" width="400" height="400" style="background: #000"></svg>
-                    <script type="text/javascript">
-                        var code = document.querySelectorAll("#a3")[0];
-                        var svg = document.querySelectorAll("#s3")[0];
-                        code.addEventListener('keyup', function() {
-                            svg.innerHTML = "";
-                            eval(code.value);
-                        });
-                        //First load
-                        svg.innerHTML = "";
-                        eval(code.value);
-                    </script>
-                    <style>
-                        #s3 path {stroke: #f00; stroke-width: 10; stroke-linejoin: round;}
-                    </style>
-                </section>
+            <svg id="s3" width="400" height="400" style="background: #000"></svg>
+            <script type="text/javascript">
+              var code3 = document.querySelectorAll("#a3")[0];
+              var svg3 = document.querySelectorAll("#s3")[0];
+              code3.addEventListener('keyup', function() {
+                svg3.innerHTML = "";
+                eval(code3.value);
+                console.log(code3.value);
+              });
+              //First load
+              svg3.innerHTML = "";
+              eval(code3.value);
+            </script>
+            <style>
+              #s3 path {stroke: #f00; stroke-width: 10; stroke-linejoin: round;}
+            </style>
+          </section>
 
-                <section>
-                    <h3>Path syntax</h3>
-                    <p><a href="http://www.w3.org/TR/SVG/paths.html#PathData">W3 Spec</a></p>
-                    <table>
-                        <thead><tr><th>Command</th><th>Name</th></tr></thead>
-                        <tbody>
-                            <tr><td>M</td><td>moveto</td></tr>
-                            <tr><td>Z</td><td>closepath</td></tr>
-                            <tr><td>L</td><td>lineto</td></tr>
-                            <tr><td>H</td><td>horizontal lineto</td></tr>
-                            <tr><td>V</td><td>vertical lineto</td></tr>
-                            <tr><td>C</td><td>curveto</td></tr>
-                            <tr><td>S</td><td>smooth curveto</td></tr>
-                            <tr><td>Q</td><td>quadratic Bézier curveto</td></tr>
-                            <tr><td>T</td><td>smooth quadratic Bézier curveto</td></tr>
-                            <tr><td>A</td><td>elliptical arc</td></tr>
-                        </tbody>
-                    </table>
-                </section>
+          <section>
+            <h3>Path syntax</h3>
+            <p><a href="http://www.w3.org/TR/SVG/paths.html#PathData">W3 Spec</a></p>
+            <table>
+              <thead><tr><th>Command</th><th>Name</th></tr></thead>
+              <tbody>
+                <tr><td>M</td><td>moveto</td></tr>
+                <tr><td>Z</td><td>closepath</td></tr>
+                <tr><td>L</td><td>lineto</td></tr>
+                <tr><td>H</td><td>horizontal lineto</td></tr>
+                <tr><td>V</td><td>vertical lineto</td></tr>
+                <tr><td>C</td><td>curveto</td></tr>
+                <tr><td>S</td><td>smooth curveto</td></tr>
+                <tr><td>Q</td><td>quadratic Bézier curveto</td></tr>
+                <tr><td>T</td><td>smooth quadratic Bézier curveto</td></tr>
+                <tr><td>A</td><td>elliptical arc</td></tr>
+              </tbody>
+            </table>
+          </section>
 
-                <section>
-                    <h3>Paths.js</h3>
-                    <p><a href="https://github.com/andreaferretti/paths-js">Source</a></p>
-                    <pre><code>var Path = require('paths/path');
+          <section>
+            <h3>Paths.js</h3>
+            <p><a href="https://github.com/andreaferretti/paths-js">Source</a></p>
+            <pre><code class="javascript">var Path = require('paths/path');
 var path = Path()
   .moveto(10, 20)
   .lineto(30, 50)
   .lineto(25, 28)
   .qcurveto(27, 30, 32, 27)
   .closepath();</code></pre>
+          </section>
 
-                </section>
+          <section>
+            <h3>Andre grafiske elementer</h3>
+            <ul>
+              <li>&lt;ellipse&gt;</li>
+              <li>&lt;line&gt;, &lt;polyline&gt; og &lt;polygon&gt;</li>
+              <li>&lt;text&gt;</li>
+              <li>&lt;image&gt;</li>
+            </ul>
+          </section>
 
-                <section>
-                    <h3>Andre grafiske elementer</h3>
-                    <ul>
-                        <li>&lt;ellipse&gt;</li>
-                        <li>&lt;image&gt;</li>
-                        <li>&lt;line&gt;</li>
-                        <li>&lt;polygon&gt;</li>
-                        <li>&lt;polyline&gt;</li>
-                        <li>&lt;text&gt;</li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h3>Eksisterende elementer</h3>
-                    <p>Hentes inn med AJAX</p>
-                    <pre><code>Snap.load('some/url.svg', function(svg) {
-    paper.add(svg);
+          <section>
+            <h3>Eksisterende elementer</h3>
+            <p>Hentes inn med AJAX</p>
+            <pre class="fragment small"><code class="javascript">Snap.load('some/url.svg', function(svg) {
+  paper.add(svg);
 });</code></pre>
-                </section>
+          </section>
 
-                <section>
-                    <h3>Events</h3>
-                    <textarea id="a4">
+          <section>
+            <h3>Events</h3>
+            <textarea id="a4">
 var p = Snap("#s4");
 var circle = p.select("#c1");
-</textarea>
-                    <svg id="s4" width="400" height="400" style="background: #000">
-                        <circle id="c1" cx="200" cy="200" r="50" />
-                    </svg>
-                    <script type="text/javascript">
-                        var code = document.querySelectorAll("#a4")[0];
-                        var svg = document.querySelectorAll("#s4")[0];
-                        code.addEventListener('keyup', function() {
-                            eval(code.value);
-                        });
-                        //First load
-                        eval(code.value);
-                    </script>
-                    <style>
-                        #s4 circle {fill: #f00;}
-                    </style>
-                </section>
+            </textarea>
+            <svg id="s4" width="400" height="400" style="background: #000">
+              <circle id="c1" cx="200" cy="200" r="50" />
+            </svg>
+            <script type="text/javascript">
+              var code4 = document.querySelectorAll("#a4")[0];
+              var svg4 = document.querySelectorAll("#s4")[0];
+              code4.addEventListener('keyup', function() {
+                eval(code4.value);
+              });
+            //First load
+            eval(code4.value);
+          </script>
+          <style>
+            #s4 circle {fill: #f00;}
+          </style>
+        </section>
 
-                <section>
-                    <h3>Animasjoner</h3>
-                    <textarea id="a5">
+        <section>
+          <h3>Animasjoner</h3>
+          <textarea id="a5">
 var p = Snap("#s5");
 var circle = p.select("#c2");
 
-var biggify = function() {
+var attr = {transform: 'scale(2) translate(-150, -150)'}
 
-circle.animate();
-
+var anim = function() {
+  circle.animate();
 }
 
-circle.mousedown(biggify);
-</textarea>
-                    <svg id="s5" width="400" height="400" style="background: #000">
-                        <circle id="c2" cx="200" cy="200" r="50" />
-                    </svg>
-                    <script type="text/javascript">
-                        var code = document.querySelectorAll("#a5")[0];
-                        var svg = document.querySelectorAll("#s5")[0];
-                        code.addEventListener('keyup', function() {
-                            eval(code.value);
-                        });
-                        //First load
-                        eval(code.value);
-                    </script>
-                    <style>
-                        #s5 circle {fill: #f00;}
-                    </style>
-                </section>
+circle.mousedown(anim);
+        </textarea>
+        <svg id="s5" width="400" height="400" style="background: #000">
+          <circle id="c2" cx="200" cy="200" r="50" />
+        </svg>
+        <script type="text/javascript">
+          var code5 = document.querySelectorAll("#a5")[0];
+          var svg5 = document.querySelectorAll("#s5")[0];
+          code5.addEventListener('keyup', function() {
+            eval(code5.value);
+          });
+            //First load
+            eval(code5.value);
+          </script>
+          <style>
+            #s5 circle {fill: #f00;}
+          </style>
+        </section>
 
-                <section>
-                    <h3>Animerte paths #1</h3>
-                    <p><a href="http://jakearchibald.com/2013/animated-line-drawing-svg/">Source</a></p>
-                    <svg class="squiggle-animated" style="margin-top: 2em;" xmlns="http://www.w3.org/2000/svg" height="98" width="581" viewBox="0 0 581 98"><path d="M62.9 14.9c-25-7.74-56.6 4.8-60.4 24.3-3.73 19.6 21.6 35 39.6 37.6 42.8 6.2 72.9-53.4 116-58.9 65-18.2 191 101 215 28.8 5-16.7-7-49.1-34-44-34 11.5-31 46.5-14 69.3 9.38 12.6 24.2 20.6 39.8 22.9 91.4 9.05 102-98.9 176-86.7 18.8 3.81 33 17.3 36.7 34.6 2.01 10.2.124 21.1-5.18 30.1" stroke="#f00" stroke-width="4.3" fill="none" style="-webkit-transition: stroke-dashoffset 2s ease-in-out; transition: stroke-dashoffset 2s ease-in-out; stroke-dasharray: 988.0062255859375px, 988.0062255859375px; stroke-dashoffset: 0px;"></path></svg>
-                    <p><button style="margin-top: 2em;" id="animate-path">Kjør!</button></p>
-                    <script type="text/javascript">
-                        var button = document.querySelector('#animate-path');
-                        button.addEventListener('click', function () {
-                            var path = document.querySelector('.squiggle-animated path');
-                            var length = path.getTotalLength();
-                            // Clear any previous transition
-                            path.style.transition = path.style.WebkitTransition = 'none';
-                            // Set up the starting positions
-                            path.style.strokeDasharray = length + ' ' + length;
-                            path.style.strokeDashoffset = length;
-                            // Trigger a layout so styles are calculated & the browser
-                            // picks up the starting position before animating
-                            path.getBoundingClientRect();
-                            // Define our transition
-                            path.style.transition = path.style.WebkitTransition = 'stroke-dashoffset 2s ease-in-out';
-                            // Go!
-                            path.style.strokeDashoffset = '0';
-                        });
-                    </script>
-
-                </section>
-
-                <section>
-                    <h3>Animerte paths #2</h3>
-                    <p><a href="http://tympanus.net/codrops/2014/01/07/shape-hover-effect-with-svg/">Source</a></p>
-                    <svg id="anim2" width="190" height="200"><path fill="#f00" d="M0,0C0,0,0,171.14385,0,171.14385C24.580441,186.61523,55.897012,195.90157,90,195.90157C124.10299,195.90157,155.41956,186.61523,180,171.14385C180,171.14385,180,0,180,0C180,0,0,0,0,0C0,0,0,0,0,0"></path></svg>
-                    <script type="text/javascript">
-                        var svg = document.querySelector('#anim2');
-
-                        svg.addEventListener('mouseover', function () {
-                            var paper = Snap("#anim2");
-                            var path = paper.select("path");
-                            var newPath = "m 0,0 0,47.7775 c 24.580441,3.12569 55.897012,-8.199417 90,-8.199417 34.10299,0 65.41956,11.325107 90,8.199417 L 180,0 z";
-                            path.animate({path: newPath}, 150, mina.easeinout);
-                        });
-                        svg.addEventListener('mouseout', function () {
-                            var paper = Snap("#anim2");
-                            var path = paper.select("path");
-                            var oldPath = "M0,0C0,0,0,171.14385,0,171.14385C24.580441,186.61523,55.897012,195.90157,90,195.90157C124.10299,195.90157,155.41956,186.61523,180,171.14385C180,171.14385,180,0,180,0C180,0,0,0,0,0C0,0,0,0,0,0";
-                            path.animate({path: oldPath}, 150, mina.easeinout);
-                        });
-                    </script>
-
-                </section>
-
-                <section>
-                    <h3>NB: Ytelse</h3>
-                    <p><code>window.requestAnimationFrame()</code> er din venn!</p>
-                </section>
-
-                <section>
-                    <h2>Wrap up</h2>
-                </section>
-
-                <section>
-                    <h3>SVG vs Canvas/WebGL</h3>
-                    <p>Ting vs Handling</p>
-
-                    <aside class="notes"></aside>
-                </section>
-
-                <section>
-                    <h3>Ressurser</h3>
-                    <ul>
-                        <li><a href="http://snapsvg.io/start/">Snap.svg intro</a></li>
-                        <li><a href="http://snapsvg.io/docs/">Snap.svg docs</a></li>
-                        <li><a href="https://developer.mozilla.org/en-US/docs/Web/SVG">SVG | MDN</a></li>
-                        <li><a href="http://www.w3.org/TR/SVG/">SVG Specs | w3.org</a></li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h3>Spørsmål, tilbakemeldinger, kjeft etc</h3>
-                    <h3><a href="http://www.twitter.com/mollerse">@mollerse</a></h3>
-                    <h3><a href="mailto:stian.veum.mollersen@bekk.no">stian.veum.mollersen@bekk.no</a></h3>
-                </section>
-
-                <section>
-                    <h2>Takk for meg!</h2>
-                </section>
-
-            </div>
-
-        </div>
-
-        <script src="./lib/js/head.min.js"></script>
-        <script src="./js/reveal.min.js"></script>
-
-        <script>
-
-            Reveal.initialize({
-                controls: false,
-                progress: false,
-                history: true,
-                center: true,
-                transition: 'none',
-                dependencies: [
-                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; }},
-                    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList;}},
-                    { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad();}},
-                ]
+        <section>
+          <h3>Animerte paths #1</h3>
+          <p><a href="http://jakearchibald.com/2013/animated-line-drawing-svg/">Source</a></p>
+          <svg class="squiggle-animated" style="margin-top: 2em;" xmlns="http://www.w3.org/2000/svg" height="98" width="581" viewBox="0 0 581 98"><path d="M62.9 14.9c-25-7.74-56.6 4.8-60.4 24.3-3.73 19.6 21.6 35 39.6 37.6 42.8 6.2 72.9-53.4 116-58.9 65-18.2 191 101 215 28.8 5-16.7-7-49.1-34-44-34 11.5-31 46.5-14 69.3 9.38 12.6 24.2 20.6 39.8 22.9 91.4 9.05 102-98.9 176-86.7 18.8 3.81 33 17.3 36.7 34.6 2.01 10.2.124 21.1-5.18 30.1" stroke="#f00" stroke-width="4.3" fill="none" style="-webkit-transition: stroke-dashoffset 2s ease-in-out; transition: stroke-dashoffset 2s ease-in-out; stroke-dasharray: 988.0062255859375px, 988.0062255859375px; stroke-dashoffset: 0px;"></path></svg>
+          <p><button style="margin-top: 2em;" id="animate-path">Kjør!</button></p>
+          <script type="text/javascript">
+            var button = document.querySelector('#animate-path');
+            button.addEventListener('click', function () {
+              var path = document.querySelector('.squiggle-animated path');
+              var length = path.getTotalLength();
+                // Clear any previous transition
+                path.style.transition = path.style.WebkitTransition = 'none';
+                // Set up the starting positions
+                path.style.strokeDasharray = length + ' ' + length;
+                path.style.strokeDashoffset = length;
+                // Trigger a layout so styles are calculated & the browser
+                // picks up the starting position before animating
+                path.getBoundingClientRect();
+                // Define our transition
+                path.style.transition = path.style.WebkitTransition = 'stroke-dashoffset 2s ease-in-out';
+                // Go!
+                path.style.strokeDashoffset = '0';
             });
+          </script>
+        </section>
 
-        </script>
+        <section>
+          <h3>Animerte paths #2</h3>
+          <p><a href="http://tympanus.net/codrops/2014/01/07/shape-hover-effect-with-svg/">Source</a></p>
+          <svg id="anim2" width="190" height="200"><path fill="#f00" d="M0,0C0,0,0,171.14385,0,171.14385C24.580441,186.61523,55.897012,195.90157,90,195.90157C124.10299,195.90157,155.41956,186.61523,180,171.14385C180,171.14385,180,0,180,0C180,0,0,0,0,0C0,0,0,0,0,0"></path></svg>
+          <script type="text/javascript">
+            var svg = document.querySelector('#anim2');
+
+            svg.addEventListener('mouseover', function () {
+              var paper = Snap("#anim2");
+              var path = paper.select("path");
+              var newPath = "m 0,0 0,47.7775 c 24.580441,3.12569 55.897012,-8.199417 90,-8.199417 34.10299,0 65.41956,11.325107 90,8.199417 L 180,0 z";
+              path.animate({path: newPath}, 150, mina.easeinout);
+            });
+            svg.addEventListener('mouseout', function () {
+              var paper = Snap("#anim2");
+              var path = paper.select("path");
+              var oldPath = "M0,0C0,0,0,171.14385,0,171.14385C24.580441,186.61523,55.897012,195.90157,90,195.90157C124.10299,195.90157,155.41956,186.61523,180,171.14385C180,171.14385,180,0,180,0C180,0,0,0,0,0C0,0,0,0,0,0";
+              path.animate({path: oldPath}, 150, mina.easeinout);
+            });
+          </script>
+
+        </section>
+
+        <section>
+          <h3>NB: Ytelse</h3>
+          <p><code class="javascript">window.requestAnimationFrame()</code> er din venn!</p>
+        </section>
+
+        <section>
+          <h2>Wrap up</h2>
+        </section>
+
+        <section>
+          <h3>SVG vs Canvas/WebGL</h3>
+          <p>Elementer vs Handlinger</p>
+          <aside class="notes">SVG handler mer om interaksjon med og mellom elementer, mens Canvas og WebGL handler mer om å vise eller spille av handlinger.</aside>
+        </section>
+
+        <section>
+          <h3>Ressurser</h3>
+          <ul>
+            <li><a href="http://snapsvg.io/start/">Snap.svg intro</a></li>
+            <li><a href="http://snapsvg.io/docs/">Snap.svg docs</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/SVG">SVG | MDN</a></li>
+            <li><a href="http://www.w3.org/TR/SVG/">SVG Specs | w3.org</a></li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Spørsmål, tilbakemeldinger, kjeft etc</h3>
+          <h3><a href="http://www.twitter.com/mollerse">@mollerse</a></h3>
+          <h3><a href="mailto:stian.veum.mollersen@bekk.no">stian.veum.mollersen@bekk.no</a></h3>
+        </section>
+
+        <section>
+          <h2>Takk for meg!</h2>
+        </section>
+
+      </div>
+
+    </div>
+
+    <script src="./lib/js/head.min.js"></script>
+    <script src="./js/reveal.min.js"></script>
+
+    <script>
+
+      Reveal.initialize({
+        controls: false,
+        progress: false,
+        history: true,
+        center: true,
+        transition: 'none',
+        dependencies: [
+        { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; }},
+        { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList;}},
+        { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad();}},
+        ]
+      });
+
+    </script>
 
 
-        <script type="text/javascript">document.write('<script src="' + (location.protocol || 'http:') + '//' + (location.hostname || 'localhost') + ':35729/livereload.js?snipver=1" type="text/javascript"><\/script>')</script>
-</body>
+    <script type="text/javascript">document.write('<script src="' + (location.protocol || 'http:') + '//' + (location.hostname || 'localhost') + ':35729/livereload.js?snipver=1" type="text/javascript"><\/script>')</script>
+  </body>
 </html>
