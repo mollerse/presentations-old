@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>10min Frontend</title>
+
+        <link rel="stylesheet" href="./css/reveal.min.css">
+        <link rel="stylesheet" href="./css/theme/night.css">
+    </head>
+
+    <body>
+
+        <div class="reveal">
+
+            <div class="slides">
+
+                <section>
+                    <h2>10min Frontend</h2>
+                    <p>Fredagsmøte Mars 2014</p>
+                    <p>Stian Veum Møllersen / <a href="http://twitter.com/mollerse">@mollerse</a></p>
+                    <p><a href="http://open.bekk.no">open.bekk.no</a></p>
+                </section>
+
+                <section>
+                    <h2>Håndter eksterne avhengighetene</h2>
+                    <h3>Bruk en pakkemanager</h3>
+                    <p>NuGET, Bower, NPM, scripts som curler github, whatever</p>
+                </section>
+
+                <section>
+                    <h2>Håndter interne avhengigeter</h2>
+                    <h3>Ting er enkle helt til de ikke er det lengre</h3>
+                    <p>Require.js eller Browserify</p>
+                </section>
+
+                <section>
+                    <h2>Minimer antallet requests</h2>
+                    <h3>Bundle js og css</h3>
+                    <p>Har du et dependency system så kommer dette nesten gratis</p>
+                </section>
+
+                <section>
+                    <h2>Minimer payload</h2>
+                    <h3>Minifiser js, css, assets</h3>
+                    <p>Uglify, CSSO, Google Closure, imagemin, SVGO</p>
+                </section>
+
+                <section>
+                    <h2>Bruk preprosessorer for CSS</h2>
+                    <h3>CSS har sine kjipe sider</h3>
+                    <p>LESS, SASS, Stylus</p>
+                </section>
+
+                <section>
+                    <h2>Kjør tester</h2>
+                </section>
+
+                <section>
+                    <h2>Autmatiser alt</h2>
+                    <h3>Bruk en taskrunner</h3>
+                    <p>Grunt, Gulp, Broccoli, bash, batch, whatever</p>
+                </section>
+
+                <section>
+                    <h2>Bonus-level</h2>
+                    <ul>
+                        <li>File watching</li>
+                        <li>Sourcemaps</li>
+                        <li>Environment dependent builds</li>
+                        <li>...og mer</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h3>Ressurser</h3>
+                    <ul>
+                        <li>Frontend defaults(Confluence)</li>
+                        <li>Medlemmene av TRH Frontend</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>&lt;/presentasjon&gt;</h2>
+                </section>
+
+            </div>
+
+        </div>
+
+        <script src="./lib/js/head.min.js"></script>
+        <script src="./js/reveal.min.js"></script>
+
+        <script>
+
+            Reveal.initialize({
+                controls: false,
+                progress: true,
+                history: true,
+                center: true,
+                transition: 'none',
+                dependencies: [
+                    { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; }},
+                    { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
+
+        </script>
+
+    </body>
+</html>
