@@ -34,6 +34,10 @@ Snakke om hvordan dirtychecking-loopen er en major WTF. Sammenligne med enkel ob
 
 Når er det bra? Når du har mye inputs og mange bindinger mot DOM.
 
+### Routing
+
+Snakke om routing og hvor kjipt det er.
+
 ### Testing
 
 Snakke om hvordan DI-opplegget til Angular gjør testing unødvendig vanskelig. Sammenligne med enkel TAP + Browserify oppsett.

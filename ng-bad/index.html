@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>ng-bad</title>
+
+  <link rel="stylesheet" href="./css/reveal.min.css">
+  <link rel="stylesheet" href="./css/theme/night.css">
+  <link rel="stylesheet" href="./css/tomorrow-night-bright.css">
+</head>
+
+<body>
+
+  <div class="reveal">
+
+    <div class="slides">
+
+      <section>
+        <h1>ng-bad</h1>
+        <p>BEKK Trondheim Miniseminar, Juni 2014</p>
+        <p>Stian Veum Møllersen / <a href="http://twitter.com/mollerse">@mollerse</a></p>
+      </section>
+
+      <section>
+        <h2>Intro</h2>
+      </section>
+
+      <section>
+        <h3>EIR: Arkitektur</h3>
+        <p>TODO: Arkitekturbilde</p>
+      </section>
+
+      <section>
+        <h3>Angular på 1 min </h3>
+      </section>
+
+      <section>
+        <img src="assets/googleangular.png" alt="">
+      </section>
+
+      <section>
+        <h3>&ldquo;HTML enhanced for web apps!&rdquo;</h3>
+        <p>&ldquo;AngularJS lets you extend HTML vocabulary for your application.&rdquo;</p>
+        <p>&mdash; angularjs.org</p>
+      </section>
+
+      <section>
+        <h3>Kjernen i Angular er direktiver</h3>
+        <p>Resten av Angular eksisterer for å drive direktivene</p>
+      </section>
+
+      <section>
+        <h2>Hvorfor jeg ikke vil velge Angular neste gang</h2>
+        <p>Hvis neste prosjekt var likt EIR</p>
+      </section>
+
+      <section>
+        <h3>Instansiering av komponenter</h3>
+        <p>Angular.js:</p>
+        <pre><code><view
+  func="functionRef"
+  val="{{evalSomeStuff}}"
+></view></code></pre>
+        <p>Whatever.js:</p>
+        <pre class="javascript" data-trim><code>
+          var view = new View({
+            func: functionRef,
+            val: val
+          });
+        </code></pre>
+      </section>
+
+      <section>
+        <h3>Instansiering av komponenter</h3>
+        <p>Arving av scope</p>
+        <pre data-trim><code>
+          angular.module(['someModule']).directive('view', function () {
+            return {
+              restrict: 'E',
+              scope: true,
+              template: '<div></div>'
+            }
+          })
+        </code></pre>
+      </section>
+
+      <section>
+        <h3>Instansiering av komponenter</h3>
+        <p>Arving av scope</p>
+        <pre class="javascript" data-trim><code>
+          angular.module(['someModule']).directive('view', function () {
+            return {
+              restrict: 'E',
+              scope: {
+                func: '=',
+                value: '@val'
+              },
+              template: '<div></div>'
+            }
+          })
+        </code></pre>
+      </section>
+
+      <section>
+        <h3>Instansiering av komponenter</h3>
+        <p>Arving av scope</p>
+        <pre class="javascript" data-trim><code>
+          angular.module(['someModule']).directive('view', function () {
+            return {
+              restrict: 'E',
+              scope: {
+                func: '=',
+                value: '@val'
+              },
+              template: '<div></div>',
+              controller: function($scope) {
+                $scope.value = 123;
+              }
+            }
+          })
+        </code></pre>
+      </section>
+
+      <section>
+        <h3>Instansiering av komponenter</h3>
+        <p>Arving av scope</p>
+        <pre class="javascript" data-trim><code>
+          angular.module(['someModule']).directive('view', function () {
+            return {
+              restrict: 'E',
+              scope: {
+                func: '=',
+                value: '@val'
+              },
+              template: '<div></div>',
+              controller: function($scope) {
+                $scope.value = 123;
+              },
+              link: function(scope) {
+                scope.value; //=> ???
+              }
+            }
+          })
+        </code></pre>
+      </section>
+
+      <section>
+        <h3>Instansiering av komponenter</h3>
+        <p>Arving av scope</p>
+        <pre class="javascript" data-trim><code>
+          angular.module(['someModule']).directive('view', function () {
+            return {
+              restrict: 'E',
+              scope: false,
+              template: '<div></div>',
+              link: function(scope) {
+                scope.value; //=> ???
+              }
+            }
+          })
+        </code></pre>
+      </section>
+
+      <section>
+        <h3>Instansiering av komponenter</h3>
+        <p>Scope-chainen blir veldig fort rotete hvis du nøster dypt</p>
+      </section>
+
+      <section>
+        <h3>Instansiering av komponenter</h3>
+        <p>Når kompleksiteten lever i JavaScript blir avstanden mellom deklarasjon og anvendelse blir for stor</p>
+      </section>
+
+      <section>
+        <h4>Direktiver funker veldig bra med HTML-drevet utvikling.</h4>
+      </section>
+
+      <section>
+        <h4>Direktiver funker også veldig bra hvis de er godt isolerte.</h4>
+      </section>
+
+      <section>
+        <h3>Dependency Injection</h3>
+        <p><pre class="javascript" data-trim><code>
+          var someController = function ($scope, someService) {
+            //$scope og someService tilgjengelig her
+          });
+        </code></pre></p>
+        <pre class="javascript fragment" data-trim><code>
+          someController.$inject = ['$scope', 'someService'];
+        </code></pre>
+      </section>
+
+      <section>
+        <h3>Dependency Injection</h3>
+        <p>Vi har bedre løsninger i AMD og CommonJS</p>
+      </section>
+
+      <section>
+        <h4>Angulars DI funker bra hvis du har spesifike behov for hva som skal skje med det du injecter.</h4>
+      </section>
+
+      <section>
+        <h3>Dirty checking loop</h3>
+        <p>Angulars løsning på 2-veis-bindinger</p>
+      </section>
+
+      <section>
+        <h3>Dirty checking loop</h3>
+        <p>Her er det utrolig mange preformance feller</p>
+      </section>
+
+      <section>
+        <h3>Dirty checking loop</h3>
+        <p>I tillegg har du events?</p>
+      </section>
+
+      <section>
+        <h3>Dirty checking loop</h3>
+        <p>Når tilstandsendringene skjer i JS blir dette unødvendig komplekst.</p>
+      </section>
+
+      <section>
+        <h4>Dirty checking funker bra hvis du har mange bindinger mot DOM</h4>
+      </section>
+
+      <section>
+        <h3>Routing</h3>
+        <p class="fragment">Finnes faktisk ikke</p>
+      </section>
+
+      <section>
+        <h4>Her finnes det en god 3. parts løsning i ui-router</h4>
+      </section>
+
+      <section>
+        <h3>Testing</h3>
+        <p>Angular er bygd opp rundt fokuset på testing</p>
+      </section>
+
+      <section>
+        <h3>Testing</h3>
+        <p>Angular er bygd opp rundt fokuset på <strike>testing</strike> DI</p>
+      </section>
+
+      <section>
+        <h3>Testing</h3>
+        <p>TODO: Eksempel på testoppsett</p>
+      </section>
+
+      <section>
+        <h1>Spørsmål? Fishbowl.</h1>
+      </section>
+
+      <section>
+        <h1>Takk for meg!</h1>
+      </section>
+
+    </div>
+
+  </div>
+
+  <script src="./lib/js/head.min.js"></script>
+  <script src="./js/reveal.min.js"></script>
+
+  <script>
+
+    Reveal.initialize({
+      controls: false,
+      progress: false,
+      history: true,
+      center: true,
+      transition: 'none',
+      dependencies: [
+      { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; }},
+      { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+      { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad();}}
+      ]
+    });
+
+  </script>
+
+
+<script type="text/javascript">document.write('<script src="' + (location.protocol || 'http:') + '//' + (location.hostname || 'localhost') + ':35729/livereload.js?snipver=1" type="text/javascript"><\/script>')</script>
+</body>
+</html>
