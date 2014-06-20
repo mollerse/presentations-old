@@ -28,8 +28,8 @@
       </section>
 
       <section>
-        <h3>EIR: Arkitektur</h3>
-        <p>TODO: Arkitekturbilde</p>
+        <h3>EIRs Arkitektur</h3>
+        <img height="600" src="assets/eirark.jpg">
       </section>
 
       <section>
@@ -247,7 +247,81 @@
 
       <section>
         <h3>Testing</h3>
-        <p>TODO: Eksempel på testoppsett</p>
+        <p>
+          <pre data-trim class="javascript"><code>
+            var scope = $rootScope.$new();
+            var directiveElement = angular.element('<directive></directive>');
+            $compile(directiveElement)(scope);
+            var directiveScope = directiveElement.scope();
+            directiveScope.$apply();
+          </code></pre>
+        </p>
+      </section>
+
+      <section>
+        <h3>Testing</h3>
+        <p>
+          <pre data-trim class="javascript"><code>
+            beforeEach(module(function ($provide) {
+              $provide.value('value', {
+                attr1: 1,
+                attr2: 2
+              });
+              //etc...
+            }));
+          </code></pre>
+        </p>
+      </section>
+
+      <section>
+        <h3>Testing</h3>
+        <p>
+          <pre data-trim class="javascript"><code>
+            var someFunc = require('someFunc');
+            var test = require('tape');
+
+            test('something', function(t) {
+              t.equal(123, someFunc(123));
+            });
+          </code></pre>
+        </p>
+      </section>
+
+      <section>
+        <h3>Testing</h3>
+        <p>Arver problemene fra Angulars DI</p>
+      </section>
+
+      <section>
+        <h3>Testing</h3>
+        <p>Ingen måte å teste uten å ha tilgang på Angular og hele appen</p>
+      </section>
+
+      <section>
+        <h4>DI-basert testing har de samme fordelene som DI</h4>
+      </section>
+
+      <section>
+        <h2>Wrap-up</h2>
+      </section>
+
+      <section>
+        <h3>Angular 2.0</h3>
+      </section>
+
+      <section>
+        <h3>Bandwagon effect</h3>
+        <p>Unngå hype-maskineriet</p>
+      </section>
+
+      <section>
+        <h3>Arvet kompleksitet</h3>
+        <p>Tenk over hvor mye kompleksitet du tar inn over deg ved valg av rammeverk/lib</p>
+      </section>
+
+      <section>
+        <h3>Arvet kompleksitet</h3>
+        <p>Simple vs Easy</p>
       </section>
 
       <section>
